@@ -1,0 +1,7 @@
+"""
+Write a program that reads 10 numbers from
+the user and prints the largest one
+"""
+
+print "Max number = %d" % max_number
+
