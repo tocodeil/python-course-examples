@@ -5,7 +5,7 @@ from mock import patch
 
 DATA_POSITIVE_VALUES = [10, 20, 30, 40, 30, 20, 30, 25, 10, 20]
 DATA_NEGATIVE_VALUES = [-20, -30, -40, -50, -40, -40, -40, -30, -20, -10]
-
+DATA_FLOATS          = [10.1, 10.2, 10.3, 4.5, 27, 99.9, 10, 20, 30, 40]
 
 class TestEx1(unittest.TestCase):
     @patch('__builtin__.raw_input', return_value='10')
@@ -29,6 +29,14 @@ class TestEx1(unittest.TestCase):
         execfile('01.py')
         self.assertIn('-10', out_spy.getvalue(),
                       'Expected -10, got: %s' % out_spy.getvalue())
+
+    @patch('sys.stdout', new_callable=StringIO)
+    @patch('__builtin__.raw_input')
+    def test_prints_largest_float(self, in_spy, out_spy):
+        in_spy.side_effect = DATA_FLOATS
+        execfile('01.py')
+        self.assertIn('99.9', out_spy.getvalue(),
+                      'Expected 99.9, got: %s' % out_spy.getvalue())
 
 
 class TestEx2(unittest.TestCase):
