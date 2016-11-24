@@ -1,19 +1,20 @@
-"""
-Write a program that reads 10 numbers from
-the user and prints the largest one
+user_list = []
 
-For example if the largest number a user has typed
-is 74, program should print:
+lst = raw_input("Enter here 10 numbers :")
+while len(lst.split()) != 10:
+    for each in lst.split():
+        if each.isdigit() != True:
+            lst = raw_input("Please enter numbers only:")
+    print "Exacly 10 numbers please"
+    lst = raw_input("Here.. Try again:")
 
-    Max number = 74
-"""
+for each in lst.split():
+    if each.isdigit() != True:
+        lst = raw_input("Please enter numbers only:")
+else:
+    for item in lst.split():
+        item = int(item)
+        user_list.append(item)
 
-maxnum = float('-inf')
 
-for _ in range(10):
-    num = float(raw_input())
-    if num > maxnum:
-        maxnum = num
-
-print "Max number = %f" % maxnum
-
+print max(user_list)
