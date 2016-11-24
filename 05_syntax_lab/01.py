@@ -1,3 +1,7 @@
+"""
+# Enter 10 numbers in a row (with blank space between them)
+#Any other format will ask for a fix
+
 user_list = []
 
 lst = raw_input("Enter here 10 numbers :")
@@ -18,3 +22,16 @@ else:
 
 
 print max(user_list)
+
+"""
+
+# Enter 10 numbers one by one
+# Any other value will cause ValueError and it fails
+
+num_list = []
+
+for item in range(10):
+    item = int(raw_input("Enter number >"))
+    num_list.append(item)
+
+print max(num_list)
