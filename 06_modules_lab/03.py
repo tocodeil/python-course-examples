@@ -9,3 +9,14 @@ its name to the user.
 - Take threshold and path as command line arguments
 """
 
+import os
+
+for file in os.listdir("."):
+    if os.stat(file)[6] > 1048576:
+        print file
+        ask = raw_input("Do you want to delete this file ? Y / N")
+        if ask == 'Y' or ask == 'y':
+            os.remove(file)
+            print "File has been deleted"
+        elif ask == 'N' or ask == 'n':
+            print "OK, maybe next time"
