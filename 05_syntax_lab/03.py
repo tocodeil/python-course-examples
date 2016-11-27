@@ -1,6 +1,6 @@
 import random
 
-rand_num = random.randint(1,10001)
+rand_num = random.randint(1,10000)
 
 rand_num = str(rand_num)
 sum_num = 0
