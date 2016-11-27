@@ -31,7 +31,7 @@ print max(user_list)
 num_list = []
 
 for item in range(10):
-    item = int(raw_input("Enter number >"))
+    item = float(raw_input("Enter number >"))
     num_list.append(item)
 
 print max(num_list)
