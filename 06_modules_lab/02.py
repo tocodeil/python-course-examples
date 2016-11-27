@@ -1,4 +1,5 @@
-""" Write a program that reads 2 numbers from sys.argv
-and prints their sum.
-"""
+import sys
 
+num1 = int(sys.argv[1])
+num2 = int(sys.argv[2])
+print num1 + num2
