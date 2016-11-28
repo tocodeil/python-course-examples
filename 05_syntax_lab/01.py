@@ -9,7 +9,7 @@ is 74, program should print:
 """
 
 maxnum = float('-inf')
-
+print "Please enter your number"
 for _ in range(10):
     num = float(raw_input())
     if num > maxnum:
