@@ -32,3 +32,17 @@ b3
 
 """
 
+# The requirements on this file are different from the one on the site.
+# Following the requirements on this file.
+
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("filename1", type=str, help="First filename.")
+parser.add_argument("filename2", type=str, help="Second filename.")
+args = parser.parse_args()
+
+with open(args.filename2, "r") as fin:
+    with open(args.filename1, "a") as fout:
+        for line in fin:
+            fout.write(line)
