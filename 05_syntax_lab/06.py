@@ -2,12 +2,10 @@ import random
 
 num_a = random.randint(1,10)
 num_b = random.randint(1,10)
-lst = []
+num_list = []
 
-for x in range(1,num_a*num_b+1):
-    if x % num_a == 0:
-        if x % num_b == 0:
-            lst.append(x)
+for x in range(1,num_b+1):
+    if num_a*x % num_b == 0:
+        num_list.append(num_a*x)
 
-print "The numbers are %s and %s" % (num_a,num_b)
-print "The lowest common denominator : %s" % (min(lst))
+print min(num_list)
