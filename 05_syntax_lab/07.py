@@ -3,13 +3,13 @@ import random
 number = random.randint(1,101)
 
 print "We choose a number between 1 to 100"
-guess = int(raw_input("Guess the number :"))
 
-while guess != number:
+while True:
+    guess = int(raw_input("Guess the number :"))
     if guess > number:
-        guess = int(raw_input("Too high.. Try again :"))
+        print "Too high"
     elif guess < number:
-        guess = int(raw_input("Too low.. Try again :"))
+        print "To low"
+    elif guess == number: break
 
 print "Correct ! This is the number !"
-
