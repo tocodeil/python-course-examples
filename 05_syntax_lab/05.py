@@ -1,9 +1,7 @@
 import random
 
-number = random.randint(1,1000001)
-
-while number % 7 != 0 or number % 13 != 0 or number % 15 != 0:
+while True:
     number = random.randint(1, 1000001)
-else:
-    print number
-
+    if number % 7 == 0 and number % 13 == 0 and number % 15 == 0:
+        print number
+        break
