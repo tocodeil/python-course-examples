@@ -20,5 +20,4 @@ print "The sum is:" , sum
 if sum%7==0:
     print "Boom"
 
-
     
