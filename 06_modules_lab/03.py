@@ -18,7 +18,7 @@ else:
   root = '.'
 
 try:
-  if (len(sys.argv) > 2):
+  if len(sys.argv) > 2:
     maxSize = int(sys.argv[2])
   else:
     maxSize = 1000*1000
@@ -32,8 +32,8 @@ for path, dirnames, filenames in os.walk(root):
   for name in filenames:
     fullPath = os.path.join(path,name)
     size = os.path.getsize(fullPath)
-    if (size > maxSize):
-      if (raw_input("Delete file %s (size=%dB)? Y/N:" % (fullPath, size)) == "Y"):
+    if size > maxSize:
+      if raw_input("Delete file %s (size=%dB)? Y/N:" % (fullPath, size)) == "Y":
         print "Deleting %s" % fullPath
         os.remove(fullPath)
      
