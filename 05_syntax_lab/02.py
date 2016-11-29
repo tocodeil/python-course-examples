@@ -6,15 +6,15 @@ If the sum is divisible by 7, also print the word "Boom".
 
 from random import randint
 
-sum = 0
+sum_num = 0
 
-for number in range(7):
+for number in range(0, 7):
     randNum = randint(1, 100)
-    print("The following number was randomally generated: %d") %randNum
-    sum += randNum
-    if randNum % 7 == 0:
-        print "Boom!"
-    else:
-        continue
+    #print("The following number was randomally generated: %d") %randNum
+    sum_num += randNum
 
-print("The sum of these numbers is = %d") %sum
+if sum_num % 7 == 0:
+    print ("The sum of these numbers is = %d" + " boom") %sum_num
+else:
+    print("The sum of these numbers is = %d") % sum_num
+
