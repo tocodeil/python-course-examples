@@ -6,12 +6,26 @@ print all previously entered lines in reverse
 order (from last to first).
 """
 
+
 lines = ""
+#print ("Please enter you input: ")
 
 while True:
-    print ("Please enter you input: ")
     line = raw_input()
-    lines = lines + line
+    lines = line + '\n' + lines
     if not line: break
 
-print ("The input was: " + lines[::-1])
+print ("\n" + lines[1::])
+
+
+"""
+# A similar idea but with a list
+
+lines = []
+while True:
+    line = raw_input()
+    lines.append(line)
+    if not line: break
+
+print lines[::-1]
+"""
