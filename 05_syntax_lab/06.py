@@ -1,9 +1,21 @@
+
+
 """
-Write a program that generates 2 random numbers
-and calculates their least common multiple,
-that is the smallest number that is divisible
-by both.
-For example if the numbers were 4 and 6,
-program should print 12.
+This code is searching for the mininum common multipler of two random numbers
 """
 
+
+from random import randint
+random_1 = randint (1,10)
+random_2 = randint (1,10)
+from fractions import gcd
+minimum = 0
+       
+minimum = (random_1 *random_2)/gcd(random_1,random_2)
+print ("For %d and %d the The minimum common multipler is %d" % (random_1 ,random_2, minimum))
+
+ 
+
+
+    
+    
