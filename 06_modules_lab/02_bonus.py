@@ -1,15 +1,14 @@
-""" Write a program that reads 2 numbers from sys.argv
-and prints their sum.
-Bonus: Print error messages for invalid inputs.
+import sys
 
-To print error messages we'll have to use a concept not yet learned in the
-course, and which will only be presented later: Exceptions.
-We'll tap into python's error handling and change its default
-error message to something more meaningful.
+if len(sys.argv) != 3:
+    raise 'You need to pass 2 arguments'
 
-Read ahead the exception chapter here:
-https://docs.python.org/2.7/tutorial/errors.html
+myNum1 = sys.argv[1]
+myNum2 = sys.argv[2]
 
-And then continue to writing the code
-"""
-
+if not myNum1.isdigit() or not myNum2.isdigit():
+    raise 'please type a digit for parameters'
+    exit
+else:
+    newNum = int(myNum1) + int(myNum2)
+    print 'Sum of args = {num}'.format(num=newNum)
