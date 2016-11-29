@@ -9,3 +9,16 @@ its name to the user.
 - Take threshold and path as command line arguments
 """
 
+
+
+import os
+
+
+for root, dirs, files in os.walk("C:\\Users\\cchaimov\\Documents\\Ex3_python"):
+    for name in files:
+        filename = os.path.join(root, name)
+        if os.path.getsize(filename)>=1024*1024:
+            print "The size of %s is above 1 MB, Would you like to delete this file (Y/N)? " % name
+            if raw_input().lower() =="Y":
+                os.remove(filename)
+            else: continue
