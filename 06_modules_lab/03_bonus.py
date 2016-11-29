@@ -24,8 +24,8 @@ for path, dirnames, filenames in os.walk(args.root):
   for name in filenames:
     fullPath = os.path.join(path,name)
     size = os.path.getsize(fullPath)
-    if (size > args.size):
-      if (raw_input("Delete file %s (size=%dB)? Y/N:" % (fullPath, size)).lower() == "y"):
+    if size > args.size:
+      if raw_input("Delete file %s (size=%dB)? Y/N:" % (fullPath, size)).lower() == "y":
         print "Deleting %s" % fullPath
         os.remove(fullPath)
      
