@@ -1,14 +1,12 @@
-""" Write a program that takes a count
-from sys.argv import and prints "Hello Python"
-count times.
+import sys
 
-For example if program was started as:
-    python 01.py 5
 
-It should print:
-    Hello Python
-    Hello Python
-    Hello Python
-    Hello Python
-    Hello Python
-"""
+myNum = sys.argv[1]
+if not myNum.isdigit():
+    print 'please type a digit as parameter'
+    exit
+elif int(myNum) == 0:
+    exit
+else:
+    for x in range(0, int(myNum)):
+        print 'Hello Python'
