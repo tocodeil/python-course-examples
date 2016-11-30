@@ -8,16 +8,12 @@ the result should be: 14.
 
 from random import randint
 
-number_count = []
 random_number = str(randint(1, 10000))
-#print("The random number is " + random_number)
-
-for num in random_number:
-    number_count.append(int(num))
-
+#print "The random number is " + random_number
 total_digits = 0
-for digit in number_count:
-    total_digits += digit
 
-print str(total_digits)
+for digit in str(random_number):
+    total_digits += int(digit)
 
+print total_digits
+total_digits = 0
