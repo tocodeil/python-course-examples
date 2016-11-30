@@ -5,11 +5,10 @@ that is the smallest number that is divisible
 by both.
 
 """
-
 import random
 
-num1=random.randrange(10)
-num2=random.randrange(10)
+num1=random.randrange(1,10)
+num2=random.randrange(1,10)
 if num1>=num2:
   Multi=num1
 else:
