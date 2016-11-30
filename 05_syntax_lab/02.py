@@ -10,11 +10,11 @@ sum_num = 0
 
 for number in range(0, 7):
     randNum = randint(1, 100)
-    #print("The following number was randomally generated: %d") %randNum
+    #print "The following number was randomally generated: %d" %randNum
     sum_num += randNum
 
 if sum_num % 7 == 0:
-    print ("The sum of these numbers is = %d" + " boom") %sum_num
+    print "The sum of these numbers is " + str(sum_num) + " boom"
 else:
-    print("The sum of these numbers is = %d") % sum_num
+    print "The sum of these numbers is " + str(sum_num)
 
