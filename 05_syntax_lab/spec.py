@@ -81,7 +81,7 @@ class TestEx3(unittest.TestCase):
     def test_randomize_in_range(self, randrange_spy, rand_spy):
         execfile('03.py')
         if randrange_spy.called:
-            randrange_spy.assert_called_once_with(10001)
+            randrange_spy.assert_called_once_with(10000)
         else:
             rand_spy.assert_called_once_with(1, 10000)
 
