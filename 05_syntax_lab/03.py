@@ -7,7 +7,7 @@ The program prints the sum of its digits.
 
 sum=0
 import random
-num=random.randrange(10000) + 1
+num=random.randrange(10000)
 print num                   #I added this line to check
 
 while num != 0:
