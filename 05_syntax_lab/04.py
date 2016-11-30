@@ -6,3 +6,11 @@ print all previously entered lines in reverse
 order (from last to first).
 """
 
+result = ""
+input = raw_input()
+
+while(input != ""):
+    result = "{0}{1}{2}".format(input, "\n", result)
+    input = raw_input()
+
+print(result)
