@@ -42,22 +42,26 @@ class TestEx1(unittest.TestCase):
 class TestEx2(unittest.TestCase):
     @patch('sys.stdout', new_callable=StringIO)
     @patch('random.randint', return_value=10)
-    def test_sum_7_random_integers(self, rand_spy, out_spy):
+    @patch('random.randrange', return_value=10)
+    def test_sum_7_random_integers(self, randrange_spy, rand_spy, out_spy):
         execfile('02.py')
         self.assertIn('70', out_spy.getvalue(),
                       'Expected to find 70 but got: %s' % out_spy.getvalue())
 
     @patch('sys.stdout', new_callable=StringIO)
     @patch('random.randint', return_value=10)
-    def test_print_boom_if_sum_divides_by_7(self, rand_spy, out_spy):
+    @patch('random.randrange', return_value=10)
+    def test_print_boom_if_sum_divides_by_7(self, randrange_spy, rand_spy, out_spy):
         execfile('02.py')
         self.assertIn('boom', out_spy.getvalue().lower(),
                       'Expected to find boom but got: %s' % out_spy.getvalue())
 
     @patch('sys.stdout', new_callable=StringIO)
     @patch('random.randint')
-    def test_no_boom_when_not_divides_by_7(self, rand_spy, out_spy):
-        rand_spy.side_effect = [1, 2, 3, 4, 5, 6, 8]
+    @patch('random.randrange')
+    def test_no_boom_when_not_divides_by_7(self, rand_range_spy, rand_int_spy, out_spy):
+        rand_int_spy.side_effect = [1, 2, 3, 4, 5, 6, 8]
+        rand_range_spy.side_effect = [1, 2, 3, 4, 5, 6, 8]
         execfile('02.py')
         self.assertNotIn('boom', out_spy.getvalue().lower(),
                          'no boom in: %s' % out_spy.getvalue())
@@ -66,15 +70,20 @@ class TestEx2(unittest.TestCase):
 class TestEx3(unittest.TestCase):
     @patch('sys.stdout', new_callable=StringIO)
     @patch('random.randint', return_value=2345)
-    def test_sum_2345(self, rand_spy, out_spy):
+    @patch('random.randrange', return_value=2345)
+    def test_sum_2345(self, randrange_spy, rand_spy, out_spy):
         execfile('03.py')
         self.assertIn('14', out_spy.getvalue(),
                       'Expected 14 but got: %s' % out_spy.getvalue())
 
     @patch('random.randint', return_value=7)
-    def test_randomize_in_range(self, rand_spy):
+    @patch('random.randrange', return_value=7)
+    def test_randomize_in_range(self, randrange_spy, rand_spy):
         execfile('03.py')
-        rand_spy.assert_called_once_with(1, 10000)
+        if randrange_spy.called:
+            randrange_spy.assert_called_once_with(10001)
+        else:
+            rand_spy.assert_called_once_with(1, 10000)
 
 
 class TestEx4(unittest.TestCase):
@@ -117,8 +126,10 @@ class TestEx5(unittest.TestCase):
 class TestEx6(unittest.TestCase):
     @patch('sys.stdout', new_callable=StringIO)
     @patch('random.randint', return_value=10)
-    def test_lcm_4_6(self, rand_spy, out_spy):
+    @patch('random.randrange', return_value=10)
+    def test_lcm_4_6(self, randrange_spy, rand_spy, out_spy):
         rand_spy.side_effect = [4, 6]
+        randrange_spy.side_effect = [4, 6]
         execfile('06.py')
 
         got = out_spy.getvalue()
@@ -126,8 +137,10 @@ class TestEx6(unittest.TestCase):
 
     @patch('sys.stdout', new_callable=StringIO)
     @patch('random.randint', return_value=10)
-    def test_lcm_8_6(self, rand_spy, out_spy):
+    @patch('random.randrange', return_value=10)
+    def test_lcm_8_6(self, randrange_spy, rand_spy, out_spy):
         rand_spy.side_effect = [8, 6]
+        randrange_spy.side_effect = [8, 6]
         execfile('06.py')
 
         got = out_spy.getvalue()
