@@ -7,7 +7,7 @@ sum=0
 import random
 
 for num in range(7):
-  num=random.randrange(1,100)
+  num=random.randint(1,100)
   sum=sum+num
 
 print sum
