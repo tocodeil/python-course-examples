@@ -5,14 +5,14 @@ The program prints the sum of its digits.
 """
 
 
-sum=0
+sum = 0
 import random
-num=random.randint(1,10000)
+num = random.randint(1,10000)
 print num                   #I added this line to check
 
 while num != 0:
-  digit=num%10
-  num=num/10
-  sum=sum+digit
+  digit = num % 10
+  num = num / 10
+  sum = sum + digit
 
 print sum                  
