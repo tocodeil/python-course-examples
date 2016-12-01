@@ -13,12 +13,15 @@ its name to the user.
 
 import os
 
-
-for root, dirs, files in os.walk("C:\\Users\\cchaimov\\Documents\\Ex3_python"):
+print "Enter a path: "
+path =raw_input()
+for root, dirs, files in os.walk(path):
     for name in files:
         filename = os.path.join(root, name)
-        if os.path.getsize(filename)>=1024*1024:
+        if os.path.getsize(filename)/1024>=1024:
             print "The size of %s is above 1 MB, Would you like to delete this file (Y/N)? " % name
-            if raw_input().lower() =="Y":
+            if raw_input().lower() =="y":
                 os.remove(filename)
-            else: continue
+            else:
+                print "else" 
+                continue
