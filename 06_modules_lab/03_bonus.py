@@ -11,3 +11,22 @@ its name to the user.
 Bonus: Use argparse module to parse command line arguments
 """
 
+import os
+import argparse
+import sys
+try:
+	parser = argparse.ArgumentParser()
+	parser.add_argument("threshold", type=long, help="display a threshold of a file size")
+	parser.add_argument("path", type=str, help="display the current working directory path")	
+	args = parser.parse_args()
+	threshold = args.threshold
+	path = args.path
+	for file in os.listdir("."):
+		if os.stat(path+"\\"+file).st_size > long(threshold):
+			print(file)
+			print ("Do you want to delete this file? type (yes/no)")
+			if raw_input().lower()== 'yes':
+				os.remove(path+"\\"+file)
+				print("The file %s was deleted!" % (file))
+except :
+	sys.exit(1)
