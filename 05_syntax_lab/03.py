@@ -13,7 +13,6 @@ print "Random number: %d" % number
 string_number = str(number)
 sum = 0
 
-#for i in range(len(string_number)):
 for char in string_number:
     sum = sum + int(char)
 
