@@ -24,3 +24,19 @@ b2
 
 """
 
+import sys
+import itertools
+
+filea = sys.argv[1]
+fileb = sys.argv[2]
+
+filec = 'c.txt'
+
+
+with open(filea, 'r') as froma:
+    with open(fileb, 'r') as fromb:
+        with open(filec, 'w') as toc:
+            newlist = list(itertools.izip_longest(froma, fromb, fillvalue=''))
+            for item in newlist:
+                for each in item:
+                    toc.write(each)
