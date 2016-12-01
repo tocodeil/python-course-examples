@@ -1,15 +1,17 @@
 """
-01.py
+syntax_ex01.py
 
 """
 
-import sys
+i = 0
+max_num = 0 
+new_num = 0
+while i < 10:
 
+    print "Please enter a number:"
+    new_num = raw_input()
+    if new_num > max_num:
+        max_num = new_num
+    i+=1
 
-print "How many Hello Python would you like to see today ? "
-
-times = int(raw_input())
-
-while times > 0:
-    print "Hello Python"
-    times-=1
+print "your biggest number enterd so far is: " , max_num
