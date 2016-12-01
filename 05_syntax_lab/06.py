@@ -7,16 +7,18 @@ by both.
 """
 import random
 
-num1=random.randint(1,10)
-num2=random.randint(1,10)
-if num1>=num2:
-  Multi=num1
+num1 = random.randint(1,10)
+num2 = random.randint(1,10)
+if num1 >= num2:
+  Multi = num1
+  increment = num1
 else:
-  Multi=num2
+  Multi = num2
+  increment = num2
 print num1,num2           #I added these line to check my code
 while True:
-  if Multi%num1 == 0 and Multi % num2 == 0:
+  if Multi % num1 == 0 and Multi % num2 == 0:
     print Multi
     break
   else:
-    Multi+=1
+    Multi += increment
