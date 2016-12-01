@@ -9,7 +9,7 @@ order (from last to first).
 text = raw_input()
 user_input_text = []
 while text != '':
-  user_input_text = [text] + user_input_text
+  user_input_text.insert(0, text)
   text = raw_input()
   
 for line in user_input_text:
