@@ -20,6 +20,6 @@ with open(r'.\\hosts', 'r') as host:
 
 for each in lst:
     dic.setdefault(each, "Host does not exist")
-    print dic[each]
+    print "IP" , dic[each]
 
 
