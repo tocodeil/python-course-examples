@@ -23,4 +23,16 @@ a2
 b2
 
 """
+import itertools 
+import sys 
 
+(inPathOne, inPathTwo, outPath) = sys.argv[1:]
+
+
+with open(inPathOne,"r") as finOne:
+	with open(inPathTwo,"r") as finTwo:
+		with open(outPath, "w") as fout:
+			newlist = list(itertools.izip_longest(finOne, finTwo, fillvalue=''))
+			for item in newlist:
+				for node in item:
+					fout.write(node)
