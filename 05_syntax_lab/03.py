@@ -9,8 +9,7 @@ the result should be: 14.
 import random
 
 number = random.randint(1,10000)
-sum = 0
-while number:
-	sum += number % 10
-	number //= 10
-print sum	
+sumOfNumbers = 0
+for c in str(number):
+	sumOfNumbers += int(c)
+print sumOfNumbers	
