@@ -10,10 +10,11 @@ from random import randint
 number = randint(1, 10000)
 print "Random number: %d" % number
 
-string_number = "%d" % number
+string_number = str(number)
 sum = 0
 
-for i in range(len(string_number)):
-    sum = sum + int(string_number[i])
+#for i in range(len(string_number)):
+for char in string_number:
+    sum = sum + int(char)
 
 print "Sum of digits: %d" % sum
