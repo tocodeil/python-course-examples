@@ -45,7 +45,6 @@ inPath = args.inPath
 
 with open(inPath,"r") as fin:
 	with open(outPath, "a") as fout:
-		fout.write("\n")
 		for line in fin:
 			fout.write(line)
 
