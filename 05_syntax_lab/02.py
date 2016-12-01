@@ -1,25 +1,21 @@
 """
-01.py
+syntax_ex02.py
 
 """
+from random import randint 
 
-import sys
+i = 0
+luky_num = 0
+luky_num_sum = 0
+while i < 7:
 
-if len(sys.argv) != 3:
-    print "wrong number of auguments, exiting..."
-    sys.exit()
+    
+    luky_num = randint(1, 100)
+    print "luky num ", luky_num
+    luky_num_sum += luky_num
+    i+=1
 
-(_, first_num, sec_num) = sys.argv
+print "All numbers summerized to : " ,luky_num_sum
 
-if not first_num.isdigit():
-    print first_num + " is not a number, exiting..."
-    sys.exit()
-
-if not sec_num.isdigit():
-    print sec_num + " is not a number, exiting..."
-    sys.exit()
-
-
-res = int(first_num) + int(sec_num)
-print " and the resualt is : " + str(res)
-
+if luky_num_sum % 7 == 0:   
+    print "boom"
