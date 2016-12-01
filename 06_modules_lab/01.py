@@ -1,14 +1,11 @@
-""" Write a program that takes a count
+""" The program takes a count
 from sys.argv import and prints "Hello Python"
 count times.
 
-For example if program was started as:
-    python 01.py 5
-
-It should print:
-    Hello Python
-    Hello Python
-    Hello Python
-    Hello Python
-    Hello Python
 """
+import sys
+
+num = int(sys.argv[1])
+while num != 0:
+	print "Hello Python"
+	num -= 1
