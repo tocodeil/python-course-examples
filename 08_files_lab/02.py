@@ -16,7 +16,6 @@ file3new = sys.argv[3]
 with open (file3new ,'w') as fin:
 	with open (file1 ,'r') as fout:
 		line1 = fout.readlines()
-		line1[-1] += '\n'
 	with open (file2,'r') as foo:
 		line2 = foo.readlines()
 	result = itertools.izip_longest(line1,line2,fillvalue='')
