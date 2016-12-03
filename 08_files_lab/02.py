@@ -22,11 +22,7 @@ with open (file3new ,'w') as fin:
 	l = list(result)
 	text = ''
 	for pair in l:
-		if pair[0].replace('\n','') != '':
-			text += pair[0].replace('\n','') + '\n'
-		if pair[1].replace('\n','') != '':
-			text += pair[1].replace('\n','')
-		#text += pair[0] + pair[1]
+		text += pair[0] + pair[1]
 	fin.write(text)
 	print text
 	
