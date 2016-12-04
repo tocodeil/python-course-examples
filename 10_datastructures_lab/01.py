@@ -29,4 +29,5 @@ if count == 1:
 	print "Welcome Master"
 else:
 	print "INTRUDER ALERT"
+exit(0)
 
