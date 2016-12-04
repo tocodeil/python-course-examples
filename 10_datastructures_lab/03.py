@@ -15,8 +15,9 @@ with open('hosts', 'r') as host:
     for line in host:
         if len(line) > 2:
 # > 2 for line with only '\n' #
-            for part in line.split('='):
-                dic[line.split('=')[0]] = line.split('=')[1].strip('\n')
+            after_split = line.split('=')
+            for part in after_split:
+                dic[after_split[0]] = after_split[1].strip('\n')
 
 for each in lst:
     dic.setdefault(each, "Host does not exist")
