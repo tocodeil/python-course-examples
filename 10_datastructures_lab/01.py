@@ -1,5 +1,5 @@
 """
-Write a program that takes two strings
+The program takes two strings
 from the user and checks if they represent
 a valid user name.
 Valid users and passwords:
@@ -14,6 +14,19 @@ When valid credentials are entered print:
 And when invalid credentials are entered print:
     INTRUDER ALERT
 
-and exit the program with a non-zero exit code
 """
+
+print " Please enter user and password:"
+username = raw_input()
+password = raw_input()
+
+d = {'apple':'red' , 'lettuce':'green' , 'lemon':'yellow' , 'orange':'orange'}
+count = 0
+for u , p in d.items():
+	if u == username and p == password:
+		count +=1
+if count == 1:
+	print "Welcome Master"
+else:
+	print "INTRUDER ALERT"
 
