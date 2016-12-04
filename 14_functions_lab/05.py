@@ -8,5 +8,16 @@ For example:
     returns: { 'f': ['foo','fi'], 'h': ['hello', 'hi'] }
 """
 
-def groupby(f, words):
-    pass
+def groupby(f, *words):
+    dicn = {}
+    for each in words:
+        for i in each:
+            if dicn.get(f(i),0) is 0:
+                dicn.setdefault(f(i),i)
+            else:
+                dicn[f(i)] = i , dicn.get(f(i))
+        return dicn
+
+
+
+
