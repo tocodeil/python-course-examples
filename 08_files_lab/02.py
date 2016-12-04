@@ -31,6 +31,6 @@ from itertools import izip_longest
 
 with open(src1, "r") as source1, open(src2, "r") as source2:
     with open(dst, "w") as destination:
-        for line_a, line_b in izip_longest(source1, source2):
+        for line_a, line_b in izip_longest(source1, source2, fillvalue = ''):
             destination.write(str(line_a))
             destination.write(str(line_b))
