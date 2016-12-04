@@ -6,7 +6,7 @@ All words with the same letters should be printed together
 """
 """
 dicn = {}
-with open(r'.\words') as words:
+with open('words') as words:
     for word in words:
         dicn[word.strip('\n')] = set(word.strip('\n'))
 
@@ -14,7 +14,7 @@ with open(r'.\words') as words:
 
 word_list = []
 
-with open(r'.\words') as words:
+with open('words') as words:
     for word in words:
         word_list.append(word.strip('\n'))
 
