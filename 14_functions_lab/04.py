@@ -4,9 +4,15 @@ a list of words, and returns only the words
 longer than minlen
 """
 
-def longer_than():
-    pass
+
+def longer_than(number,*args):
+    lst = []
+    for each in args:
+        if len(each) > number:
+            lst.append(each)
+    return lst
 
 
-# print longer_than(4, "foo", "bar", "fantastic", "python", "abc")
+
+print longer_than(4, "foo", "bar", "fantastic", "python", "abc")
 
