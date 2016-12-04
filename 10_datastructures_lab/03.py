@@ -13,7 +13,6 @@ filename = 'hosts'
 hostslist = []
 name = []
 ip =[]
-print list
 with open (filename,'r') as f:
 	for line in f:
 		hostslist.append(line.strip().split('='))
