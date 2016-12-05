@@ -9,5 +9,7 @@ for i in range(1, 8):
 
     numbers = randint(1,100)
     sum+=numbers
-
+if sum % 7 == 0:
+    print "Boom"
 print sum
+
