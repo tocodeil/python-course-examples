@@ -9,7 +9,7 @@ x= ''
 line = raw_input()
 while line:
     if line != '\n':
-        x = line + x
+        x = line +'\n'+ x
     line = raw_input()
     if not line:
         break
