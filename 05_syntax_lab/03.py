@@ -11,10 +11,9 @@ the result should be: 14.
 
 from random import randint
 
-sum=0
-number=randint(1,10000)
-print number
-while number:
-    sum+= (number%10)
-    number/=10
+sum = 0
+number = randint(1,10000)
+string_number = str(number)
+for c in string_number:
+    sum+= int(c)
 print sum
