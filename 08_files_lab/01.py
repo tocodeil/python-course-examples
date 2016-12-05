@@ -32,3 +32,15 @@ b3
 
 """
 
+import sys
+
+if len(sys.argv) != 3:
+    print "Usage: %s file1 file2" % sys.argv[0]
+    sys.exit(1)
+
+with open(sys.argv[1], "a") as fout:
+    with open(sys.argv[2], "r") as fin:
+        for line in fin:
+            fout.write(line)
+
+
