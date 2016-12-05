@@ -11,11 +11,11 @@ order (from last to first).
 
 
 print "Enter your text: "
-i=0;
+i = 0;
 line = []
 while True:
-    string=raw_input()
-    if len(string)>0:
+    string = raw_input()
+    if len(string) > 0:
         line.append(string)
         continue
     else: break
