@@ -11,14 +11,13 @@ program should print 12.
 
 from random import randint 
 
-num1= randint(1,10)
-num2= randint(1,10)
+num1 = randint(1,10)
+num2 = randint(1,10)
 
-max = num1 if num1>num2 else num2
+max = max(num1,num2)
 
-multi=max
-print num1, "and ", num2
+multi = max
 
 while (multi%num1 != 0 or multi%num2 != 0):
-        multi+=max
+        multi+= max
 print (multi)
