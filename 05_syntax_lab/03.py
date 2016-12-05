@@ -8,9 +8,9 @@ the result should be: 14.
 total=0
 #sum=0
 from random import randint
-for i in range(1, 2):
+for i in range (1):
 
-     numbers = randint(1,1000)
+     numbers = randint(1,10000)
      print " the random number is:", numbers
      orech= len(str(numbers))
 for y in range (len(str(numbers))):
