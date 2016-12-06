@@ -37,12 +37,10 @@ lines1 = []
 lines2 = []
 with open(outfile, "w") as fout:
     with open(infile1, "r") as fin1:
-        lines1 = [line.rstrip('\n') for line in fin1]
-    with open(infile2, "r") as fin2:
-        lines2 = [line.rstrip('\n') for line in fin2]
-    combinedLines = list(itertools.izip_longest(lines1, lines2, fillvalue=''))
-    for line in combinedLines:
-        if len(line[0]) > 0:
-            fout.write(line[0] + '\n')
-        if len(line[1]) > 0:
-            fout.write(line[1] + '\n')
+        with open(infile2, "r") as fin2:
+            combinedLines = list(itertools.izip_longest(fin1, fin2, fillvalue=''))
+            for line in combinedLines:
+                if len(line[0]) > 0:
+                    fout.write(line[0])
+                if len(line[1]) > 0:
+                    fout.write(line[1])
