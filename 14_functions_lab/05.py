@@ -8,5 +8,14 @@ For example:
     returns: { 'f': ['foo','fi'], 'h': ['hello', 'hi'] }
 """
 
+import collections
 def groupby(f, words):
-    pass
+    print [f(x) for x in words]
+    dict = collections.defaultdict(list)
+    for word in words:
+        dict[f(word)].append(word)
+
+    return dict
+
+
+# print groupby(lambda s: s[0], ['foo', 'fi', 'hello', 'hi'])
