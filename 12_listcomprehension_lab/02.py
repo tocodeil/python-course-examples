@@ -3,10 +3,9 @@ Write a python program that takes two words
 as sys.argv and prints only the letters
 common to both
 """
+import sys
 
+words = sys.argv[1:] 
 
-word1 = raw_input("Insert a number: ")
-word2 = raw_input("Insert another number: ")
+print list(set( [ c for c in words[0]  if c in words[1] ]))
 
-common =list(set( [ c1 for c1 in word1 for c2 in word2 if c1==c2]))
-print common
