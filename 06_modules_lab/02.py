@@ -1,4 +1,4 @@
-""" Write a program that reads 2 numbers from sys.argv
-and prints their sum.
-"""
+import sys
+sum = int(sys.argv[1]) + int(sys.argv[2])
+print "The sum of both args is {arg}".format(arg=sum)
 
