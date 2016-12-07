@@ -6,3 +6,18 @@ print all previously entered lines in reverse
 order (from last to first).
 """
 
+print("Enter line")
+
+userInput = raw_input()
+output = []
+
+while userInput:
+	output.append(userInput)
+	userInput = raw_input()
+	
+output.reverse()
+
+for line in output:
+	print(line)
+
+	
