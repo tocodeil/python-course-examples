@@ -1,6 +1,9 @@
-"""
-Write a Python program that generates 7 random integers
-between 1 and 100, and prints their sum.
-If the sum is divisible by 7, also print the word "Boom".
-"""
+total = 0
+from random import randint
+for i in range(7):
+    total += randint(1, 101)
 
+if total % 7 == 0:
+    print "The total is {}, BOOM!".format(total)
+else:
+    print "The total is {}".format(total)
