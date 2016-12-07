@@ -9,3 +9,22 @@ its name to the user.
 - Take threshold and path as command line arguments
 """
 
+import os
+import sys
+
+if len(sys.argv) != 3:
+    print "Usage: %s <threshold> <path>" % sys.argv[0]
+    sys.exit(1)
+
+(_, threshold,path) = sys.argv
+
+for root,dirs,files in os.walk(r"%s" % path):
+	print(files)
+	for file in files:
+		filepath = os.path.join(root, file)
+		if(os.path.getsize(filepath) > int(threshold)):
+			print("File %s is bigger than threshold. Delete it? (Y/N)" % file)
+			decision = raw_input()
+			if(decision == "Y"):
+				os.remove(filepath)
+
