@@ -16,4 +16,25 @@ And when invalid credentials are entered print:
 
 and exit the program with a non-zero exit code
 """
+import errno, sys
 
+master = {
+    'apple': 'red',
+    'lettuce': 'green',
+    'lemon': 'yellow',
+    'orange': 'orange'
+    }
+
+user_name = raw_input("Enter your user name: ")
+password = raw_input("Enter your password: ")
+
+if user_name in master.keys():
+    x = master[user_name]
+    if x == password:
+        print "Welcome Master"
+    else:
+        print "INTRUDER ALERT"
+        sys.exit(errno.EACCES)
+else:
+    print "INTRUDER ALERT" #used the same text to avoid username enumeration / harvesting
+    sys.exit(errno.EACCES)
