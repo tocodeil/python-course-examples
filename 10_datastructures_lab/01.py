@@ -1,19 +1,19 @@
-"""
-Write a program that takes two strings
-from the user and checks if they represent
-a valid user name.
-Valid users and passwords:
-    apple => red
-    lettuce => green
-    lemon => yellow
-    orange => orange
+import sys
 
-When valid credentials are entered print:
-    Welcome Master
+#print sys.argv[1:]
 
-And when invalid credentials are entered print:
-    INTRUDER ALERT
+usr = sys.argv[1]
+pwd = sys.argv[2]
 
-and exit the program with a non-zero exit code
-"""
 
+username = ['apple', 'lettuce', 'lemon', 'orange']
+password = {'apple': 'red', 'lettuce': 'green', 'lemon': 'yellow', 'orange': 'orange'}
+
+
+if usr in username:
+    if password[usr] == pwd:
+        print "Welcome Master"
+    else:
+        print "INTRUDER ALERT"
+else:
+    print "INTRUDER ALERT"
