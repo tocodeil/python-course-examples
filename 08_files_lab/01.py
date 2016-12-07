@@ -34,7 +34,7 @@ b3
 
 import sys
 
-(file1, file2) = sys.argv[1:]
+(file1, file2) = sys.argv[1:3]
 
 with open(file2, "r") as fout:
     with open(file1, "a") as fin:
