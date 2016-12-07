@@ -1,9 +1,17 @@
-"""
-Define a list of 20 grades
-and print only the grades that
-are above average
-"""
+from collections import Counter
 
-grades = [99, 90, 15, 28, 38, 44, 50, 81, 79, 60, 99, 90, 15, 28, 38, 44, 50,
-        81, 79, 60 ]
+scores = [10, 20, 30, 40, 50, 60, 70, 80, 90, 45, 67, 96, 48, 60, 70, 80, 90, 45, 67, 96]
+
+average = sum(scores) / len(scores)
+
+for k in scores:
+    if k > average:
+        print k
+
+###or
+print sorted(i for i in scores if i > average)
+
+
+
+
 
