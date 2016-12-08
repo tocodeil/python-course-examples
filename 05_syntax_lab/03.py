@@ -1,6 +1,6 @@
 total = 0
 from random import randint
-rnd = str(randint(1,10001))
+rnd = str(randint(1,10000))
 for i in rnd:
     total += int(i)
 
