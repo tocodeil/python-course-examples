@@ -1,34 +1,24 @@
+""" Write a program that takes a count
+from sys.argv import and prints "Hello Python"
+count times.
+
+For example if program was started as:
+    python 01.py 5
+
+It should print:
+    Hello Python
+    Hello Python
+    Hello Python
+    Hello Python
+    Hello Python
 """
-Write a program that takes 2 file names
-and appends the second file's contents to
-the end of the first one.
 
-So if file 'a.txt' has:
+import sys
+for _ in range(int(sys.argv[1])) :
+        print "Hello Python"
 
-a1
-a2
 
-and file 'b.txt' has
 
-b2
-b2
-b3
 
-then after running
-   python 01.py a.txt b.txt
-a.txt will have
 
-a1
-a2
-b1
-b2
-b3
-
-and b.txt will have
-
-b1
-b2
-b3
-
-"""
 
