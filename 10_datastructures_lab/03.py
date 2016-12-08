@@ -14,8 +14,11 @@ hosts_file = 'hosts'
 with open (hosts_file, 'r') as fout:
     host_ip_list = {}
     for line in fout:
-        host_ip_list.update ( {line.split("=")[0] : line.split("=")[1]} ) 
-    #print host_ip_list
+        if line == '\n': continue
+        key, value = line.split("=")
+        host_ip_list.update({key:value})
+
+    print host_ip_list
 
 
     for a in sys.argv[1:]:
