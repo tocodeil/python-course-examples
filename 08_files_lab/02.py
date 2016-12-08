@@ -1,10 +1,17 @@
-""" Write a program that reads 2 numbers from sys.argv
-and prints their sum.
-"""
-
+import itertools
 import sys
-first = int(sys.argv[1])
-second = int(sys.argv[2])
-sum = first + second
-print sum
+
+First_file = sys.argv[1]
+Second_file = sys.argv[2]
+Sum_file = sys.argv[3]
+
+with open(First_file, "r") as fin1:
+    with open(Second_file, "r") as fin2:
+        with open(Sum_file, "a") as fout:
+             line = itertools.izip_longest(fin1, fin2, fillvalue='')
+             for each in line:
+                 for word in each:
+                    fout.write(word)
+
+
 
