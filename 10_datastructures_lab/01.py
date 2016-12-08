@@ -19,10 +19,10 @@ and exit the program with a non-zero exit code
 
 user_name = raw_input()
 password = raw_input()
-
-user_list = [ 'apple', 'lettuce', 'lemon', 'orange' ]
-password_list = [ 'red', 'green', 'yello', 'orange' ]        
-credentials = zip(user_list, password_list)
-if (user_name,password) in credentials:
+credentials = {'apple':'red', 'lettuce':'green', 'lemon': 'yello', 'orange':'orange'}
+#user_list = [ 'apple', 'lettuce', 'lemon', 'orange' ]
+#password_list = [ 'red', 'green', 'yello', 'orange' ]        
+#credentials = zip(user_list, password_list)
+if user_name in credentials and credentials[user_name] == password:
     print "Welcome Master"
 else: print "INTRUDER ALERT"
