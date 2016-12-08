@@ -7,4 +7,3 @@ if total % 7 == 0:
     print "The total is {}, BOOM!".format(total)
 else:
     print "The total is {}".format(total)
-    
