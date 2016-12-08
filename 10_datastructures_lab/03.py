@@ -18,10 +18,11 @@ with open (hosts_file, 'r') as fout:
         key, value = line.split("=")
         host_ip_list.update({key:value})
 
-    print host_ip_list
+    
 
 
     for a in sys.argv[1:]:
         if a in host_ip_list:
             sys.stdout.write( host_ip_list[a])
         else: print "%s does not exist in the list " % (a)
+
