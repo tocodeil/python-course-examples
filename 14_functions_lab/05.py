@@ -9,4 +9,7 @@ For example:
 """
 
 def groupby(f, words):
-    pass
+	d = {}
+	for word in words:
+		d.setdefault(f(word), []).append(word)
+	return d	
