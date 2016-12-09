@@ -7,7 +7,7 @@ If wrong types were passed in, raise an exception
 
 def take_string_and_number(s,n):
 	error_message = "type is wrong"
-	if type(s) != int or type(n) != str:
+	if type(s) != str or type(n) != int:
 		raise Exception (error_message)
 	
 	
