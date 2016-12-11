@@ -17,21 +17,14 @@ if len(sys.argv) != 3:
     print "usage %s <filename> <key>" % sys.argv[0]
     sys.exit()
 
-def iscomment(line):
-    return re.search('^#', line)
-
-def findValue(key, line):
-    regexp = r'%s\s*=\s*(\w*)' % sys.argv[2]
-    m = re.search(regexp, line)
-    if m: return m.group(1)
-    else: return None
+comment_regex = re.compile('^#')
+key_value_regex = re.compile(r'([^= ]*)\s*=\s*(.*)')
 
 with open(sys.argv[1], 'r') as fin:
     for line in fin:
-        if not iscomment(line):
-           value = findValue(sys.argv[2], line)
-           if value != None:
-               print value
-               break
+        if not comment_regex.search(line):
+           match = key_value_regex.search(line)
+           if match and match.group(1) == sys.argv[2]:
+               print match.group(2)
 
 
