@@ -14,3 +14,18 @@ Sample output:
     Grant,Morgan,morgangrant@lotron.com
 """
 
+import sys
+import re
+
+if len(sys.argv) != 2:
+    print "usage: %s file"
+    sys.exit()
+
+regex = re.compile("(.*),(.*),(.*)")
+
+with open(sys.argv[1],'r') as fin:
+    for line in fin:
+        m = regex.search(line)
+        print "%s,%s,%s" % (m.group(2), m.group(1), m.group(3))
+
+
