@@ -15,3 +15,7 @@ class TestEx2(unittest.TestCase):
         self.assertEqual(ex2.to_underscore('helloWorld'), 'hello_world')
         self.assertEqual(ex2.to_underscore('getName'), 'get_name')
         self.assertEqual(ex2.to_underscore('noMoreShallWePart'), 'no_more_shall_we_part')
+
+if __name__ == '__main__':
+        unittest.main()
+
