@@ -6,3 +6,13 @@ print all previously entered lines in reverse
 order (from last to first).
 """
 
+
+print "please insert number :"
+x = raw_input();
+
+while x != '':
+    x = raw_input();
+    if (x == ''):
+        print "none"
+
+
