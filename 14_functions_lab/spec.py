@@ -39,11 +39,11 @@ class TestEx2(unittest.TestCase):
         self.assertTrue(True)
 
     def test_first_not_string(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaises(Exception):
             ex2.take_string_and_number(10, 20)
 
     def test_second_not_number(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaises(Exception):
             ex2.take_string_and_number('x', 'y')
 
 
