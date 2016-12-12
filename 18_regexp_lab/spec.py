@@ -1,7 +1,27 @@
 import unittest
+import subprocess
+import sys
 
 ex2 = __import__('02')
 
+class TestEx1(unittest.TestCase):
+    def test_props(self):
+        command = [sys.executable, '01.py', 'props', 'name']
+        p = subprocess.Popen(command,
+            stdout = subprocess.PIPE,
+            stderr = subprocess.PIPE,
+            shell=False)
+        out,err = p.communicate()
+        self.assertEqual('joe', out.rstrip("\n"), '\nExpected: joe\nReceived: {}'.format(out))
+
+    def test_regex(self):
+        command = [sys.executable, '01.py', 'props', 'n.me']
+        p = subprocess.Popen(command,
+            stdout = subprocess.PIPE,
+            stderr = subprocess.PIPE,
+            shell=False)
+        out,err = p.communicate()
+        self.assertEqual('bar', out.rstrip("\n"), '\nExpected: bar\nReceived: {}'.format(out))
 
 class TestEx2(unittest.TestCase):
     def test_tocamelcase(self):
