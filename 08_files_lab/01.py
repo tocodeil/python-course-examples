@@ -31,4 +31,12 @@ b2
 b3
 
 """
+import sys
+dst = sys.argv[1]
+src = sys.argv[2]
 
+
+with open(src, "r") as fin:
+    with open(dst, "a") as fout:
+        for line in fin:
+            fout.write(line)
