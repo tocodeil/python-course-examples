@@ -13,10 +13,10 @@ def toCamelCase(text):
     space_first = re.sub('_',' ',text)
     upper_first = re.sub(r'\s\b([a-z])', lambda m: m.group(1).upper(), space_first)
     no_sapce = re.sub(' ','',upper_first)
-    print no_sapce
+    return no_sapce
 
 def to_underscore(text):
     add_space = re.sub(r'([A-Z])',lambda m: " " + m.group(1).lower(),text )
     underscore = re.sub(' ','_',add_space)
-    print underscore
+    return underscore
 
