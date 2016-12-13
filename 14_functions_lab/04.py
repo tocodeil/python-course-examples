@@ -1,12 +1,12 @@
-"""
-Write a function called "longer_than" that takes minlen and
-a list of words, and returns only the words
-longer than minlen
-"""
+def longer_than(length, *kwords):
+    for n in kwords:
+        if type(n) is not str:
+            raise "ONLY str is allowed"
 
-def longer_than():
-    pass
+        if len(n) > length:
+            print n
+    return
 
 
-# print longer_than(4, "foo", "bar", "fantastic", "python", "abc")
-
+#print longer_than(2, "lionel", "david", "oo")
+print longer_than(3, 'hit', 'me', 'baby', 'one', 'more', 'time')
