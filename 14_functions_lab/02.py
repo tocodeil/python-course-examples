@@ -6,5 +6,12 @@ If wrong types were passed in, raise an exception
 """
 
 def take_string_and_number(s,n):
+    if type(s) != type('string'):
+        raise Exception("First parameter should be string")
+    res = False
+    if type(n) == type(1): res = True
+    if res is False:
+        if type(n) == type(1.0): res = True
+    if res is False:
+        raise Exception("Second parameter should be a number")
     pass
-
