@@ -1,10 +1,14 @@
-"""
-Write a function called take_string_and_number that takes two arguments: 
-    A string
-    And a number
-If wrong types were passed in, raise an exception
-"""
 
-def take_string_and_number(s,n):
-    pass
 
+def mysum(first, second):
+    if type(first) is not int:
+        print "argument {arg} should be integer".format(arg=first)
+        raise
+    if type(second) is not str:
+        print "argument {arg} should be string".format(arg=second)
+        raise
+    return
+
+
+#print mysum(11, 32)
+print mysum(1, "dwd")
