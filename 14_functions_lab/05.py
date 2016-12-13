@@ -9,4 +9,10 @@ For example:
 """
 
 def groupby(f, words):
+    res = {}
+    for word in words:
+        wlist = res.setdefault(f(word), [])
+        wlist.append(word)
+        res[f(word)] = wlist
+    return res
     pass
