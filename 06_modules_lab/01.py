@@ -12,3 +12,16 @@ It should print:
     Hello Python
     Hello Python
 """
+x = 0
+
+import sys
+
+y = sys.argv[1]
+
+y = int(sys.argv[1])
+
+while x <= y :
+    print "Hellow Python"
+    x = x + 1
+
+
