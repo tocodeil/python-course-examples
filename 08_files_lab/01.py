@@ -32,3 +32,13 @@ b3
 
 """
 
+file1 = "C:\\Emanuel\\Work\\Python_Scripts\\2.SecondWeek\\HomeWork\\files\\a.txt"
+file2 = "C:\\Emanuel\\Work\\Python_Scripts\\2.SecondWeek\\HomeWork\\files\\b.txt"
+
+with open (file1, "a") as WRITE1 :
+    with open (file2, "r") as READ2 :
+        for line in READ2 :
+            WRITE1.write (line)
+
+        
+    
