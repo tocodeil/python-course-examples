@@ -6,4 +6,25 @@ by both.
 For example if the numbers were 4 and 6,
 program should print 12.
 """
-
+import random
+a = random.randint(1,10)
+b = random.randint(1,10)
+big = a * b
+#print a, b
+c = a
+d = b
+if a == b:
+    print a
+    exit()
+while a > b:
+    if a <= big:
+        if c % b == 0 and c % a == 0:
+            print c
+            break
+    c = c +1
+while b > a:
+        if b <= big:
+            if d % b == 0 and d % a == 0:
+                print d
+                break
+        d = d +1
