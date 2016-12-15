@@ -1,19 +1,22 @@
 """
-Write a program that reads 10 numbers from
-the user and prints the largest one
+syntax_ex01.py
 
-For example if the largest number a user has typed
-is 74, program should print:
-
-    Max number = 74
 """
 
-maxnum = float('-inf')
+i = 0
+max_num = 0 
+new_num = 0
+while i < 10:
 
-for _ in range(10):
-    num = float(raw_input())
-    if num > maxnum:
-        maxnum = num
+    print "Please enter a number:"
+    new_num = raw_input()
+    while not new_num.isdigit():
+        print "invalid input, try again... or cancel"
+        new_num = raw_input()
 
-print "Max number = %f" % maxnum
+    if new_num > max_num:
+        max_num = new_num
+    i+=1
 
+
+print "your biggest number enterd so far is: " , max_num
