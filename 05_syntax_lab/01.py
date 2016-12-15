@@ -8,10 +8,10 @@ is 74, program should print:
     Max number = 74
 """
 
-maxnum = float('-inf')
-
+maxnum = int (0)
+print "please enter 10 numbers"
 for _ in range(10):
-    num = float(raw_input())
+    num = int (raw_input())
     if num > maxnum:
         maxnum = num
 
