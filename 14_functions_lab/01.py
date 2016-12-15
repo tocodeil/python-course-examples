@@ -7,3 +7,10 @@ Write 2 functions:
     Ignore non-numeric arguments
 """
 
+def mysum(*args):
+	return sum([x for x in args if isinstance(x, int)])
+def mymul (*args):
+	return reduce (
+		lambda acc, val: acc * val,
+		[x for x in args if isinstance(x, int)]
+		)

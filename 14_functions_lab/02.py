@@ -6,5 +6,6 @@ If wrong types were passed in, raise an exception
 """
 
 def take_string_and_number(s,n):
-    pass
+    if not isinstance(s, str) or not isinstance(n, int):
+		raise ValueError
 
