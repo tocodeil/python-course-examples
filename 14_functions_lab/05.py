@@ -8,5 +8,10 @@ For example:
     returns: { 'f': ['foo','fi'], 'h': ['hello', 'hi'] }
 """
 
-def groupby(f, words):
-    pass
+def groupby(f, list_words):
+    d = {}
+    for w in list_words:
+      d.setdefault(f(w), []).append(w)
+    return d
+
+print groupby(lambda(s): s[0],["hello", "hi", "help", "bye", "here"])
