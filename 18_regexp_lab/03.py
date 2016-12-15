@@ -13,4 +13,12 @@ Sample output:
     Hampton,Witt,witthampton@zaphire.com
     Grant,Morgan,morgangrant@lotron.com
 """
+import csv
+import sys
 
+file_name = sys.argv[1]
+
+with open(file_name + ".csv" , 'rb') as excel:
+    reader = csv.reader(excel)
+    for row in reader:
+        print row[1] + ",", row[0] + ",", row[2]
