@@ -1,11 +1,10 @@
-""" Write a program that searches current working directory
-for files larger than 1MB. Every time you find such a file print
-its name to the user.
-
-- When the program finds a large file. It should ask the user
-  a message asking if she wants to delete it, and delete the
-  file if requested
-
-- Take threshold and path as command line arguments
-"""
-
+import sys
+import os
+path = sys.argv[1]
+for root, dirs, files in os.walk(path):
+    for name in files:
+        filepath = os.path.join(root, name)
+        if os.path.getsize(filepath)> 1000000 * float(sys.argv[2]):
+             userInput = raw_input("{filename} -- Is bigger than {definedSize}MB, Do you wan to delete the file (Y/N)".format(filename = filepath, definedSize = float(sys.argv[2])))
+             if userInput == "Y":
+                 os.remove(filepath)
