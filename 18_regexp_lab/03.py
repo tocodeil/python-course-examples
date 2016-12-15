@@ -14,3 +14,12 @@ Sample output:
     Grant,Morgan,morgangrant@lotron.com
 """
 
+
+import csv
+import sys
+
+fileName = sys.argv[1]
+with open(fileName + ".csv" , 'rb') as f:
+    reader = csv.reader(f)
+    for row in reader:
+        print row[1] + ",", row[0] + ",", row[2]
