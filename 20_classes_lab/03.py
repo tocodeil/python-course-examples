@@ -32,4 +32,34 @@ _all.add_dependency(luke, hansolo, leia, yoda, padme, anakin, obi, darth)
 # the ones it depends on
 _all.build()
 """
+class Widget(object):
+    def __init__(self, name):
+        self._name = name
+        self._others = []
+    
+    def add_dependency(self, *others):
+        self._others += others
 
+    def _build_depends_list(self):
+        dependents = [self._name]
+        for o in self._others:
+            dependents += o._build_depends_list()
+        return dependents
+
+    def build(self):
+        # use 1: to skip my name
+        dependents = self._build_depends_list()[1:] 
+
+        # remove duplicates
+        dependents = list(set(dependents))  
+        
+        for d in dependents[:len(dependents)-1]:
+            print "%s," % d,
+        
+        # no ',' on the last item
+        print dependents[len(dependents)-1] 
+
+
+
+# code should print: Han Solo, Padme Amidala, Anakin Skywalker, Leia, Yoda, Luke, Obi-Wan, Darth Vader
+# (can print with newlines in between modules)
