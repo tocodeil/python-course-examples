@@ -1,26 +1,17 @@
-"""
-Write a program that takes 3 names. The first two
-are existing file names and the last is a new file name/
-The program should write the lines from the first two 
-files interwinded into the output file. So if we have
+import itertools
+import sys
 
-a.txt with
-a1
-a2
+First_file = sys.argv[1]
+Second_file = sys.argv[2]
+Sum_file = sys.argv[3]
 
-and b.txt with
-b1
-b2
+with open(First_file, "r") as fin1:
+    with open(Second_file, "r") as fin2:
+        with open(Sum_file, "a") as fout:
+             line = itertools.izip_longest(fin1, fin2, fillvalue='')
+             for each in line:
+                 for word in each:
+                    fout.write(word)
 
-then running
 
-python 02.py a.txt b.txt c.txt
-will result in the creation of c.txt with the following content:
-
-a1
-b1
-a2
-b2
-
-"""
 

@@ -31,4 +31,16 @@ b2
 b3
 
 """
+import sys
+#Path = sys.argv[1]
+First_file = sys.argv[1]
+Second_file = sys.argv[2]
+
+with open(First_file, "r") as fin:
+    with open(Second_file, "a") as fout:
+        for line in fin:
+            fout.write(line)
+
+
+
 
