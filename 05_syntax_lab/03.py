@@ -1,8 +1,11 @@
-"""
-Write a program that generates a random number
-between 1 and 10,000,
-and prints the sum of its digits.
-For example if the number was: 2345
-the result should be: 14.
-"""
+from random import randint
+
+myNum = randint(1, 1000)
+myList = []
+
+for ch in str(myNum):
+    #print ch
+    myList.append(int(ch))
+
+print sum(myList)
 
