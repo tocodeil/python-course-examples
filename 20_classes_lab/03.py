@@ -33,3 +33,39 @@ _all.add_dependency(luke, hansolo, leia, yoda, padme, anakin, obi, darth)
 _all.build()
 """
 
+class Widget (object):
+	_name
+	__others
+	
+	def __init__(self, name):
+		_name = name
+		__others = []
+
+		
+	def add_dependency(self, *others):
+		self.__others += others
+	
+	
+	def build_depnds_list(self):
+		dependents = [self._name]
+		for other in __others:
+			dependents += other.build_depnds_list()
+		return dependents
+		
+	
+	def build(self):
+	def build(self):
+		dependents = self.build_depnds_list
+		dependents = list(set(dependents))
+		
+		for dependent in dependents[:len(dependents)-1]:
+			print "%s," % dependent	
+		print "%s," dependents[-1]
+		
+		
+		
+		
+		
+		
+		
+		
