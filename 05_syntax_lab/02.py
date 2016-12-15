@@ -4,3 +4,17 @@ between 1 and 100, and prints their sum.
 If the sum is divisible by 7, also print the word "Boom".
 """
 
+from random import randint
+
+sum = 0
+counter = 0
+
+while counter<7:	
+	sum += randint(1,100)
+	counter+=1
+	
+print(sum)
+
+if(sum % 7 == 0):
+	print("Boom")
+	

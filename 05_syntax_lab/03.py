@@ -6,3 +6,15 @@ For example if the number was: 2345
 the result should be: 14.
 """
 
+from random import randint
+
+randNum = randint(1,10000)
+
+# print(randNum)
+
+result = 0
+
+for x in str(randNum):
+	result += int(x)
+	
+print(result)
