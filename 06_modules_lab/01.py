@@ -1,14 +1,5 @@
-""" Write a program that takes a count
-from sys.argv import and prints "Hello Python"
-count times.
+import sys
 
-For example if program was started as:
-    python 01.py 5
-
-It should print:
-    Hello Python
-    Hello Python
-    Hello Python
-    Hello Python
-    Hello Python
-"""
+num = int(sys.argv[1])
+for _ in range(num):
+    print 'Hello world'
