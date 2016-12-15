@@ -23,4 +23,15 @@ a2
 b2
 
 """
+from itertools import izip_longest
+import sys
+src1 = sys.argv[1]
+src2 = sys.argv[2]
+new = sys.argv[3]
 
+
+
+with open(src1) as textfile1, open(src2) as textfile2:
+    with open(new, "w") as out:
+        for x, y in izip_longest(textfile1, textfile2,fillvalue=''):
+         out.write("{0}{1}".format(x, y))
