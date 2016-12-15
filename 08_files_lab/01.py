@@ -31,4 +31,19 @@ b2
 b3
 
 """
+import os
+import sys
+
+if len(sys.argv) != 3:
+    print "Usage: %s <filepath1> <filepath2>" % sys.argv[0]
+    sys.exit(1)
+
+(_, filepath1, filepath2) = sys.argv
+
+if (os.path.exists(filepath1) and os.path.exists(filepath2)):
+	with open(filepath1, "a") as file1:
+		    with open(filepath2, "r") as file2:
+				for line in file2:
+					file1.write(line)
+
 
