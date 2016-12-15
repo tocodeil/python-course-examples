@@ -1,8 +1,8 @@
-"""
-Write a program that reads lines from the user
-until an empty line is entered.
-After the user typed in an empty line,
-print all previously entered lines in reverse
-order (from last to first).
-"""
+text = ''
+print 'enter text to finish enter an empty raw'
+user = raw_input()
+while user != '':
+    text = user + ' '+ text
+    user = raw_input()
 
+print text
