@@ -22,5 +22,18 @@ b1
 a2
 b2
 
+
 """
 
+import sys
+import itertools
+
+(src1, src2,dst) = sys.argv[1:4]
+
+with open(src1, "r") as fout1, open(src2, "r") as fout2:
+    with open(dst, "w") as fin:
+        lines = itertools.izip_longest(fout1,fout2,fillvalue = "")
+        for i in lines:
+            fin.write(str(i[0]))
+            fin.write(str(i[1]))
+            
