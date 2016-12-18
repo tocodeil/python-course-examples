@@ -17,3 +17,12 @@ And when invalid credentials are entered print:
 and exit the program with a non-zero exit code
 """
 
+users = {'apple' : 'red' , 'lettuce' : 'green', 'lemon':'yellow','orange' : 'orange'}
+
+user = raw_input("Enter user name: ")
+password = raw_input("Enter password : ")
+
+if user in users and password == users[user]:
+    print "welcome Master"
+else:
+    print "INTRUDER ALERT"
