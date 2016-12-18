@@ -2,16 +2,15 @@
 Write code to make the following unit test pass
 """
 
-import re
-
-class InvalidImageExt(Exception): pass
+class InvalidImageExt(Exception):
+    print "Wrong extantion"
+    pass
 
 class ImageFile(object):
-    def __init__(self, fname):
-        if re.search(r'([.]png|[.]jpe?g|[.]gif)$', fname):
-            self.name = fname
-        else:
-            raise InvalidImageExt("Extension should be .png")
+    def __init__(self, filename):
+        if filename[-4:] != ".png":
+            raise InvalidImageExt
+
 
 import unittest
 
@@ -27,5 +26,7 @@ class TestImageFile(unittest.TestCase):
             img = ImageFile("file.mp3")
 
 unittest.main()
+
+
 
 
