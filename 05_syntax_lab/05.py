@@ -1,5 +1,7 @@
-"""
-Write a program that generates random integers in a loop
-until it finds a number that is divisible by: 7, 13, and 15.
-"""
+import random
 
+while True:
+    number = random.randint(1, 1000001)
+    if number % 7 == 0 and number % 13 == 0 and number % 15 == 0:
+        print number
+        break

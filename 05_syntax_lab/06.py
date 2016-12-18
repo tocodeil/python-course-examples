@@ -1,9 +1,11 @@
-"""
-Write a program that generates 2 random numbers
-and calculates their least common multiple,
-that is the smallest number that is divisible
-by both.
-For example if the numbers were 4 and 6,
-program should print 12.
-"""
+import random
 
+num_a = random.randint(1,10)
+num_b = random.randint(1,10)
+num_list = []
+
+for x in range(1,num_b+1):
+    if num_a*x % num_b == 0:
+        num_list.append(num_a*x)
+
+print min(num_list)
