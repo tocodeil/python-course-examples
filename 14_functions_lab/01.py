@@ -19,12 +19,12 @@ def mysum(*numbers1):
 print mysum(5,5,'a',1)
 
 def mymul (*numbers):
- vaildigits=[]
- for i in numbers: 
-  if type(i)==int:
-   vaildigits.append(i)     
-   mul=reduce(lambda x,y:x*y,vaildigits)
- return mul
+    vaildigits=[]
+    for i in numbers: 
+     if type(i)==int:
+            vaildigits.append(i)     
+            mul=reduce(lambda x,y:x*y,vaildigits)
+    return mul
 
 print mymul(1,9,10,'j')
 
