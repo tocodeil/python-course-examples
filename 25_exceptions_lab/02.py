@@ -7,17 +7,13 @@ Alert the user politely if there was any problem opening the file
 
 import sys
 
-(_, filename) = sys.argv
+filename = sys.argv[1]
 
-count = 0
 try:
-    with open(filename, 'r') as f:
-        for line in f:
-            count += 1
-
-except IOError as e:
-    print "Failed to open file.", e
-
-else:
-    print "File had %d lines" % count
-
+    with open(filename, 'r') as read:
+        counter = 0
+        for line in read:
+            counter += 1
+    print counter
+except:
+    print "Sorry, file %s not found" % filename
