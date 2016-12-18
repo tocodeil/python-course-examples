@@ -10,17 +10,15 @@ For example:
 
 def groupby(f, words):
     grouped = {}
-    listed = []
+    #listed = []
     for word in words:
         key = f(word)
-
-        listed.append(word)
+        grouped.setdefault(key, []).append(word)
+        #listed.append(word)
 
     return grouped
 
 
 
 
-
-
-groupby(lambda s: s[0], ['foo', 'fi', 'hello', 'hi'])
+print groupby(lambda s: s[0], ['foo', 'fi', 'hello', 'hi'])
