@@ -32,3 +32,12 @@ b3
 
 """
 
+import sys
+
+filea = sys.argv[1]
+fileb = sys.argv[2]
+
+with open(fileb, 'r') as fromb:
+    with open(filea, 'a') as toa:
+        for line in fromb:
+            toa.write(line)
