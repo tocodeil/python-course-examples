@@ -5,10 +5,11 @@ longer than minlen
 """
 
 def longer_than(minlen, *words):
-    tword = ''
+    tword = []
+    #print (list(words))
     for word in words:
         if len(word) > minlen:
-            tword = tword + '\n' + word
+            tword.append(word)
             #print word
     return tword
 
