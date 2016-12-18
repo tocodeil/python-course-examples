@@ -33,3 +33,62 @@ _all.add_dependency(luke, hansolo, leia, yoda, padme, anakin, obi, darth)
 _all.build()
 """
 
+class Widget(object):
+    def __init__(self, name):
+        self.name = name
+        self.status = False
+
+    def add_dependency(self,*args):
+        self.depen = []
+        for arg in args:
+            if arg not in self.depen:
+                self.depen += [(arg)]
+        return self.depen
+
+    def build(self):
+        self.status = True
+        text = ""
+        for each in self.depen:
+            each.status = True
+            text += each.name + ", "
+        print text[:-2]
+
+
+luke    = Widget("Luke")
+hansolo = Widget("Han Solo")
+leia    = Widget("Leia")
+yoda    = Widget("Yoda")
+padme   = Widget("Padme Amidala")
+anakin  = Widget("Anakin Skywalker")
+obi     = Widget("Obi-Wan")
+darth   = Widget("Darth Vader")
+_all    = Widget("All")
+
+
+luke.add_dependency(hansolo, leia, yoda)
+leia.add_dependency(padme, anakin)
+obi.add_dependency(yoda)
+darth.add_dependency(anakin)
+
+_all.add_dependency(luke, hansolo, leia, yoda, padme, anakin, obi, darth)
+
+_all.build()
+# code should print: Han Solo, Padme Amidala, Anakin Skywalker, Leia, Yoda, Luke, Obi-Wan, Darth Vader
+# (can print with newlines in between modules)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
