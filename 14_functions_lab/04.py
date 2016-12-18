@@ -5,16 +5,15 @@ longer than minlen
 """
 
 def longer_than(minlen,*words):
-  length = minlen
-  wordslist  = list(words)
-  newlist=[]
-  for index in range(len(wordslist)):
-    i = str(wordslist[index])
-    if len(i) > length:
-     newlist.append(i)
-  return newlist
+    length = minlen
+    newlist = []
+    for word in words:
+        i = str(word)
+        if len(i) > length:
+            newlist.append(i)
+    return newlist
      
 
-print longer_than (9,'hi','wahhh131','123456')
+print longer_than (3,'hi','wahhh131','123456')
 
  
