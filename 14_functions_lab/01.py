@@ -6,14 +6,14 @@ Write 2 functions:
 """
 
 def mysum(*numbers1):
- totalsum=0
- vaildigits=[]
- for i in numbers1: 
-  if type(i)==int:
-    vaildigits.append(i) 
- for i in vaildigits:
-     totalsum+=i
- return totalsum
+    totalsum=0
+    vaildigits=[]
+    for i in numbers1: 
+        if type(i)==int:
+            vaildigits.append(i) 
+        for i in vaildigits:
+            totalsum+=i
+        return totalsum
 
 
 print mysum(5,5,'a',1)
