@@ -4,3 +4,28 @@ Write a class called "Summer" that provides the methods:
     total() - returns total sum of numbers added so far
 """
 
+class Summer(object):
+    def __init__(self):
+        self.summer_list = []
+
+    def add(self, *args):
+        for arg in args:
+            self.summer_list += [(arg)]
+        return self.summer_list
+
+    def total(self):
+        return sum(self.summer_list)
+
+s = Summer()
+t = Summer()
+
+s.add(10, 20)
+t.add(50)
+s.add(30)
+
+# should print 60
+print s.total()
+
+# should print 50
+print t.total()
+
