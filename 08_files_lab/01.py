@@ -32,3 +32,11 @@ b3
 
 """
 
+import sys
+
+(dst, src) = sys.argv[1:]
+
+with open(src, "r") as source:
+    with open(dst, "a") as destination:
+        for line in source:
+            destination.write(line)
