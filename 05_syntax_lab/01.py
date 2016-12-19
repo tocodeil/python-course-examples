@@ -9,11 +9,12 @@ is 74, program should print:
 """
 
 maxnum = float('-inf')
-
+#print("please insert 10 random numbers. Press 'enter' after each number")
 for _ in range(10):
+    #print("You need to choose 10 numbers. Please enter another number.")
     num = float(raw_input())
     if num > maxnum:
         maxnum = num
 
-print "Max number = %f" % maxnum
+print "Max number = {}".format(maxnum)
 
