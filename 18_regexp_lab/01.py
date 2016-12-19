@@ -15,9 +15,13 @@ keys = {}
 data=[]
 with open(filename, "r") as fin1:
     for line in fin1:
-        match = re.search('^[a-z]*\s*=\s*[a-z]*[0-9]*',line)
+        #print line
+        match = re.search('^\w+\s*=\s*(\w+)',line)
         if match:
             data = match.group(0).split('=')
             data = [x.strip(' ') for x in data]  
+            print data
             keys[data[0]]=data[1]
+        
 print keys.get(key)
+
