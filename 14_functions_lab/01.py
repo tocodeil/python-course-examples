@@ -5,26 +5,26 @@ Write 2 functions:
     Ignore non-numeric arguments
 """
 
-def mysum(*numbers1):
+def mysum(*numbers):
     totalsum=0
     vaildigits=[]
-    for i in numbers1: 
-        if type(i)==int:
+    for i in numbers: 
+        if (type(i)==int or type(i)==float):
             vaildigits.append(i) 
-        for i in vaildigits:
+            print vaildigits
             totalsum+=i
-        return totalsum
+    return totalsum
 
 
-print mysum(5,5,'a',1)
+print mysum(5,'o',-5,2)
 
 def mymul (*numbers):
     vaildigits=[]
     for i in numbers: 
-     if type(i)==int:
+        if (type(i)==int or type(i)==float):
             vaildigits.append(i)     
             mul=reduce(lambda x,y:x*y,vaildigits)
     return mul
 
-print mymul(1,9,10,'j')
+print mymul(-1,9,10,10)
 
