@@ -12,3 +12,8 @@ It should print:
     Hello Python
     Hello Python
 """
+import sys
+
+num=int(sys.argv[1])
+for i in range(0,num):
+    print "Hello Python"
