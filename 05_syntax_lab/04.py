@@ -6,3 +6,13 @@ print all previously entered lines in reverse
 order (from last to first).
 """
 
+reverseOrder = ""
+
+while True:
+    userInput = raw_input()
+    if not userInput:
+        break
+    reverseOrder = userInput + '\n' + reverseOrder
+
+print reverseOrder
+      
