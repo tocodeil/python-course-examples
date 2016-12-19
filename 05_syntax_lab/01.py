@@ -8,6 +8,9 @@ is 74, program should print:
     Max number = 74
 """
 
+
+# new lines
+
 maxnum = float('-inf')
 
 for _ in range(10):
