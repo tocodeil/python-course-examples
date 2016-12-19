@@ -5,3 +5,16 @@ Bonus: To make things interesting, the program should cheat once in a white
 """
 
 
+from random import randint
+x = randint(1,100)
+
+while True:
+	guess = int(raw_input())
+
+	if (guess == x):
+		print "you guessed it!"
+		break
+	elif (guess > x):
+		print "too large"
+	else:
+		print "too small"
