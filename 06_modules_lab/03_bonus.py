@@ -11,3 +11,18 @@ its name to the user.
 Bonus: Use argparse module to parse command line arguments
 """
 
+import os
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("path", type=str, help="Search path")
+parser.add_argument("threshold", type=int, help="Threshold for file size in MB")
+args = parser.parse_args()
+
+for name in os.listdir(args.path):
+    if os.path.getsize(name) / 1024 > int(args.threshold):
+        print "Found file: %s bigger than 1MB. Delete? y/n" % name
+        result = raw_input()
+        if result.lower() == "y":
+            os.remove(name)
+            print "%s deleted." % name
