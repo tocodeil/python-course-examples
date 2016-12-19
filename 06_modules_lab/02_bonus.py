@@ -13,3 +13,14 @@ https://docs.python.org/2.7/tutorial/errors.html
 And then continue to writing the code
 """
 
+import sys
+
+if len(sys.argv) != 3:
+    print "Usage: %s <number> <number>" % sys.argv[0]
+    sys.exit(1)
+
+try:
+    print int(sys.argv[1]) + int(sys.argv[2])
+except ValueError:
+    print "One of the arguments is not a number: %s %s" % (sys.argv[1], sys.argv[2])
+
