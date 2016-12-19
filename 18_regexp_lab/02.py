@@ -14,10 +14,13 @@ def toCamelCase(text):
     
 
 
-print toCamelCase('helloworld')
+#print toCamelCase('hello_world')
 
 def to_underscore(text):
-    return re.sub(r'\s','_',text)
-
-
-print to_underscore('hello world')
+    data = ''
+    data= re.sub(r'([a-z])([A-Z])',r'\1_\2',text)
+    data1 = data.lower()
+    return data1
+     
+     
+print to_underscore('hello_World')
