@@ -13,4 +13,14 @@ Sample output:
     Hampton,Witt,witthampton@zaphire.com
     Grant,Morgan,morgangrant@lotron.com
 """
+import sys
+import re
 
+file_name = sys.argv[1]
+
+with open(file_name, 'r') as f:
+    for line in f:
+        #I used the following example from the text book:
+        #print re.sub(r'\b\w', lambda m: m.group(0).upper(), line)
+        #It yields the required result, however, I'm not sure whether this is correct
+        print re.sub(r'([^,]+),([^,]+)', lambda m: m.group(2) + "," + m.group(1), line)
