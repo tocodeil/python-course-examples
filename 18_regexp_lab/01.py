@@ -26,4 +26,4 @@ key = sys.argv[2]
 with open(file, "r") as fout:
         for line in fout:
             if value_from_key(line, key):
-                sys.stdout.write(re.split("=[ ]*", line)[1])
+                sys.stdout.write(re.split(r"=[ ]*", line)[1])
