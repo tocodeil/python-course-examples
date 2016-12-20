@@ -11,15 +11,18 @@ if len(sys.argv) != 3:
 
 (_, first_num, sec_num) = sys.argv
 
+
+
 if not first_num.isdigit():
-    print first_num + " is not a number, exiting..."
-    sys.exit()
+    if not (first_num[0] == "-" and first_num[1:].isdigit()):
+        print first_num + " is not a number, exiting..."
+        sys.exit()
 
 if not sec_num.isdigit():
-    print sec_num + " is not a number, exiting..."
-    sys.exit()
+    if not (sec_num[0] == "-" and sec_num[1:].isdigit()):
+        print sec_num + " is not a number, exiting..."
+        sys.exit()
 
-
-res = int(first_num) + int(sec_num)
+res = float(first_num) + float(sec_num)
 print " and the resualt is : " + str(res)
 
