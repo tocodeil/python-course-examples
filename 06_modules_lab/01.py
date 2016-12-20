@@ -1,14 +1,16 @@
-""" Write a program that takes a count
-from sys.argv import and prints "Hello Python"
-count times.
-
-For example if program was started as:
-    python 01.py 5
-
-It should print:
-    Hello Python
-    Hello Python
-    Hello Python
-    Hello Python
-    Hello Python
 """
+01.py
+
+"""
+
+import sys
+
+
+#print "How many Hello Python would you like to see today ? "
+
+#times = int(raw_input())    
+times = int(sys.argv[1])
+while times > 0:
+    print "Hello Python"
+    times-=1
+    
