@@ -21,7 +21,7 @@ if __name__ == "__main__":
             cx = int(raw_input("Column: "))
 
             currentgame.play(rx,cx)
-            if Game.winner == True:
+            if currentgame.winner():
                 print "Congratulations! you won :)"
             else:
                 continue
