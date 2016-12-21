@@ -11,3 +11,8 @@ following code:
 should print 10
 """
 
+class MyCounter(object):
+    count = 0
+
+    def __init__(self):
+        MyCounter.count += 1
