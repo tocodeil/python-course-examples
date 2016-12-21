@@ -13,4 +13,17 @@ Sample output:
     Hampton,Witt,witthampton@zaphire.com
     Grant,Morgan,morgangrant@lotron.com
 """
+import sys
+import re
 
+if len(sys.argv) != 2:
+    print "Usage: %s <inifile>" % sys.argv[0]
+    sys.exit(1)
+
+(_, inifile) = sys.argv
+
+with open(inifile, "r") as fin1:
+    for line in fin1:
+        m = re.search(r'\b(.+),(.+),(.+)',line)
+        if m is not None:
+            print "%s,%s,%s" % (m.group(2), m.group(1), m.group(3))
