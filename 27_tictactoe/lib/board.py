@@ -4,6 +4,7 @@ class InvalidMove(Exception): pass
 
 class Game(object):
     boardmarks =  [[[''], [''], ['']], [[''], [''], ['']], [[''], [''], ['']]]
+    #winner = False
 
     def __init__(self):
         #boardmarks = [[[''], [''], ['']], [[''], [''], ['']], [[''], [''], ['']]]
@@ -19,7 +20,7 @@ class Game(object):
         self.p2 = p2
         self.players = cycle([p1, p2])
         self.current_player = self.players.next()
-        #counter: count 8 game rounds. if no winner --> it's a tie 
+        #counter: count 8 game rounds. if no winner --> it's a tie
         counter = 0
 
         self.clearBoard()
@@ -30,14 +31,14 @@ class Game(object):
         if row < 0 or row > 3 or column < 0 or column > 3:
             raise InvalidMove("You have made an illegal move! Please choose a number between 1-3")
 
-        #availability testavail(row,column)
+        #availability testavail(row,column) -- in val below
 
         #counter = counter + 1
         pass
 
     #@classmethod
-    def winner():
-        win = False
+    def winner(self):
+        self.winner = False
         #Check fow winner in each row --> 123 | 456 | 789 (+ mechanism for false winning if empty)
         if (Game.boardmarks[0][0] == Game.boardmarks[0][1]) and (Game.boardmarks[0][2] == Game.boardmarks[0][1]) and (Game.boardmarks[0][0] != ''):
             win = True
