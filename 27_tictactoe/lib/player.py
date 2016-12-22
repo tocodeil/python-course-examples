@@ -1,9 +1,9 @@
 class Player(object):
     """build a player. receive from the user a name and side (O or X)"""
     name = ''
-    side = ''
+    mark = ''
 
-    def __init__(self, name, mark):
-        self.n = name
-        self.m = mark
+    def __init__(self, n1, m1):
+        self.name = n1
+        self.mark = m1
 
