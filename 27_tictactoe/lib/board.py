@@ -12,7 +12,7 @@ class Game(object):
 
     def __init__(self):
         self.clearBoard()
-        self.welcome_message()
+        #self.welcome_message()
 
     def start(self, pl1, pl2):
         self.p1 = pl1
