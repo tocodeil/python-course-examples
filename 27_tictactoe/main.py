@@ -18,7 +18,7 @@ if __name__ == "__main__":
     while counter < 9:
         try:
             currentgame.winner()
-            print "Next round:", counter
+            #print "Next round:", counter
             rx = int(raw_input("Row: "))
             cx = int(raw_input("Column: "))
 
@@ -26,7 +26,12 @@ if __name__ == "__main__":
 
             if currentgame.val(rx, cx) == True:
                 currentgame.boardmarks[rx][cx] = [currentgame.current_player.mark]
-                print currentgame.boardmarks
+                print currentgame.boardmarks[0][0], "|", currentgame.boardmarks[0][1], "|", currentgame.boardmarks[0][2]
+                print "-----------------"
+                print currentgame.boardmarks[1][0], "|", currentgame.boardmarks[1][1], "|", currentgame.boardmarks[1][2]
+                print "-----------------"
+                print currentgame.boardmarks[2][0], "|", currentgame.boardmarks[2][1], "|", currentgame.boardmarks[2][2]
+                #print currentgame.boardmarks
                 currentgame.swap_turn()
             else:
                 raise InvalidMove("The place you chose is taken")
