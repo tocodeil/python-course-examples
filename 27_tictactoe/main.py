@@ -17,18 +17,26 @@ if __name__ == "__main__":
 
     while counter < 9:
         try:
+            currentgame.winner()
+            print "Next round:", counter
             rx = int(raw_input("Row: "))
             cx = int(raw_input("Column: "))
 
             currentgame.play(rx,cx)
-            if currentgame.winner():
-                print "Congratulations! you won :)"
+
+            if currentgame.val(rx, cx) == True:
+                currentgame.boardmarks[rx][cx] = [currentgame.current_player.mark]
+                print currentgame.boardmarks
+                currentgame.swap_turn()
             else:
-                continue
-    # calling board with two players
-            #currentgame.start(p1,p2)
+                raise InvalidMove("The place you chose is taken")
+
+            counter = counter + 1
 
         except InvalidMove as e:
            print e
         except ValueError as e:
             print "you may only use numbers to indicate rows and colums"
+
+    else:
+        print "The game ended in a tie :("
