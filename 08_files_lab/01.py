@@ -32,3 +32,19 @@ b3
 
 """
 
+import sys
+
+if len(sys.argv) != 3:
+    print "Usage: %s <fileToAppend> <fileToRead>" % sys.argv[0]
+    sys.exit(1)
+
+(_, fileToAppend,fileToRead) = sys.argv
+
+bufsize = 20
+
+with open(fileToAppend, "ab") as fout:
+    with open(fileToRead, "rb") as fin:
+        buf = fin.read(bufsize)
+        while buf != "":
+            fout.write(buf)
+            buf = fin.read(bufsize)
