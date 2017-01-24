@@ -6,3 +6,10 @@ For example if the number was: 2345
 the result should be: 14.
 """
 
+import random
+
+number = random.randint(1,10000)
+sumOfNumbers = 0
+for c in str(number):
+	sumOfNumbers += int(c)
+print sumOfNumbers	
