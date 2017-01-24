@@ -1,8 +1,18 @@
 """
-Write a program that generates a random number
+The program generates a random number
 between 1 and 10,000,
-and prints the sum of its digits.
-For example if the number was: 2345
-the result should be: 14.
+The program prints the sum of its digits.
 """
 
+
+sum = 0
+import random
+num = random.randint(1,10000)
+print num                   #I added this line to check
+
+while num != 0:
+  digit = num % 10
+  num = num / 10
+  sum = sum + digit
+
+print sum                  

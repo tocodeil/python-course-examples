@@ -1,8 +1,16 @@
 """
-Write a program that reads lines from the user
+The program reads lines from the user
 until an empty line is entered.
 After the user typed in an empty line,
-print all previously entered lines in reverse
+The program will print all previously entered lines in reverse
 order (from last to first).
 """
 
+text = raw_input()
+user_input_text = []
+while text != '':
+  user_input_text.insert(0, text)
+  text = raw_input()
+  
+for line in user_input_text:
+  print line
