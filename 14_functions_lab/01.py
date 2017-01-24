@@ -1,5 +1,5 @@
 import unittest
-
+import numbers
 """
 Write 2 functions:
     mysum - returns the sum of its input arguments
@@ -7,3 +7,18 @@ Write 2 functions:
     Ignore non-numeric arguments
 """
 
+def mysum(*args):
+    num = [a for a in args if isinstance(a, numbers.Number)]
+    sums = reduce(
+        lambda a, b: a+b,
+        num
+    )
+    return sums
+
+def mymul(*args):
+    num = [a for a in args if isinstance(a, numbers.Number)]
+    sums = reduce(
+        lambda a, b: a*b,
+        num
+    )
+    return sums
