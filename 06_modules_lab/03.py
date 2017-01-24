@@ -8,4 +8,21 @@ its name to the user.
 
 - Take threshold and path as command line arguments
 """
-
+import os
+import sys
+try:
+	if len(sys.argv) != 3 :
+		raise TypeError()
+	else:
+		threshold = sys.argv[1]
+		path = sys.argv[2]
+		for file in os.listdir("."):
+			if os.stat(path+"\\"+file).st_size > long(threshold):
+				print(file)
+				print ("Do you want to delete this file? type (yes/no)")
+				if raw_input().lower()== 'yes':
+					os.remove(path+"\\"+file)
+					print("The file %s was deleted!" % (file))
+except  TypeError:
+	print ("Usage: %s <threshold> <path>" % sys.argv[0])
+	sys.exit(1)

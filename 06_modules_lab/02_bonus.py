@@ -12,4 +12,16 @@ https://docs.python.org/2.7/tutorial/errors.html
 
 And then continue to writing the code
 """
+import sys
 
+try:
+	if len(sys.argv) != 3 :
+		raise TypeError()
+	else:
+		firstNumber = int(sys.argv[1])
+		secondNumber = int(sys.argv[2])
+		print ("The sum of %d + %d is: %d" % (firstNumber, secondNumber , firstNumber + secondNumber))
+except  TypeError:
+	print ("Usage: %s <firstNumber> <secondNumber>" % sys.argv[0])
+	sys.exit(1)
+	
