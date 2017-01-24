@@ -32,3 +32,20 @@ b3
 
 """
 
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("outPath", type=str, help="display the first file path")
+parser.add_argument("inPath", type=str, help="display the second file path")	
+	
+args = parser.parse_args()
+outPath = args.outPath
+inPath = args.inPath
+
+
+with open(inPath,"r") as fin:
+	with open(outPath, "a") as fout:
+		for line in fin:
+			fout.write(line)
+
+
