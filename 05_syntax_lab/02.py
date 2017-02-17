@@ -8,12 +8,14 @@ import random
 sum = 0
 
 for number in range(7):
-    print random.randint(1,100)
+    x=random.randint(1,100)
+    number += x 
     sum += number
+    
 
-print "sum =", sum
+print "sum = ",sum 
 
-if number % (7):
+if sum % 7 == 0:
  print "boom"
 
 
