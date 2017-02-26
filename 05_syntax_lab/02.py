@@ -9,14 +9,14 @@ sum = 0
 
 for number in range(7):
     x=random.randint(1,100)
-    number += x 
+    number = x 
     sum += number
     
 
 print "sum = ",sum 
 
 if sum % 7 == 0:
- print "boom"
+    print "boom"
 
 
 
