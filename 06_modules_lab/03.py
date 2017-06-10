@@ -9,3 +9,22 @@ its name to the user.
 - Take threshold and path as command line arguments
 """
 
+
+import os
+cwd = os.getcwd()
+
+for file in os.listdir("."): 
+      file_path = cwd+"\\"+file
+      #print file_path
+      statinfo = os.stat(file_path)
+      #print statinfo.st_size
+
+      size_of_file = int(statinfo.st_size)
+      if (size_of_file > 1000):
+           print "File name is :" , file
+           print "please type 1 if you want to delete the file else type 0 :"
+           chooice = int(raw_input())
+
+           if (chooice == 1):
+                 os.remove (file_path)
+
