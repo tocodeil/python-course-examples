@@ -1,13 +1,12 @@
-"""
-Write a class called MyCounter that counts
-how many times it was initialised, so the
-following code:
 
-    for _ in range(10):
-        c1 = MyCounter()
+class MyCounter(object):
+    count = 0
 
-    print MyCounter.count
+    def __init__(self):
+        MyCounter.count += 1
 
-should print 10
-"""
+for _ in range(10):
+     c1 = MyCounter()
 
+# should print 10
+print MyCounter.count
