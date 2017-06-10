@@ -1,9 +1,15 @@
 """
-Define a list of 20 grades
-and print only the grades that
-are above average
+ex2.py
+DB
+
 """
+from random import randint 
 
-grades = [99, 90, 15, 28, 38, 44, 50, 81, 79, 60, 99, 90, 15, 28, 38, 44, 50,
-        81, 79, 60 ]
+grades = []
+for i in range(20):
+    grades.append(randint(1, 100))
 
+#print grades    
+
+for k in sorted(grades,reverse=True):
+    print k
