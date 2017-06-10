@@ -1,9 +1,21 @@
-import unittest
 
-"""
-Write 2 functions:
-    mysum - returns the sum of its input arguments
-    mymul - returns the multiplication of its input arguments
-    Ignore non-numeric arguments
-"""
 
+def mysum(*args):
+    res = 0
+    for n in args:
+        if type(n) is int:
+            res += n
+    return res
+
+
+def mymul(*args):
+    res = 1
+    for n in args:
+        if type(n) is int:
+            res = n * res
+    return res
+
+
+
+print mysum(1, 2, "dwd")
+print mymul(6, 5, "dwd")
