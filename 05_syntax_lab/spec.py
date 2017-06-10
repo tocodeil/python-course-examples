@@ -1,5 +1,6 @@
 import unittest
 import re
+import subprocess
 from StringIO import StringIO
 from mock import patch
 
@@ -40,31 +41,11 @@ class TestEx1(unittest.TestCase):
 
 
 class TestEx2(unittest.TestCase):
-    @patch('sys.stdout', new_callable=StringIO)
-    @patch('random.randint', return_value=10)
-    @patch('random.randrange', return_value=10)
-    def test_sum_7_random_integers(self, randrange_spy, rand_spy, out_spy):
-        execfile('02.py')
-        self.assertIn('70', out_spy.getvalue(),
-                      'Expected to find 70 but got: %s' % out_spy.getvalue())
-
-    @patch('sys.stdout', new_callable=StringIO)
-    @patch('random.randint', return_value=10)
-    @patch('random.randrange', return_value=10)
-    def test_print_boom_if_sum_divides_by_7(self, randrange_spy, rand_spy, out_spy):
-        execfile('02.py')
-        self.assertIn('boom', out_spy.getvalue().lower(),
-                      'Expected to find boom but got: %s' % out_spy.getvalue())
-
-    @patch('sys.stdout', new_callable=StringIO)
-    @patch('random.randint')
-    @patch('random.randrange')
-    def test_no_boom_when_not_divides_by_7(self, rand_range_spy, rand_int_spy, out_spy):
-        rand_int_spy.side_effect = [1, 2, 3, 4, 5, 6, 8]
-        rand_range_spy.side_effect = [1, 2, 3, 4, 5, 6, 8]
-        execfile('02.py')
-        self.assertNotIn('boom', out_spy.getvalue().lower(),
-                         'no boom in: %s' % out_spy.getvalue())
+    def test_age_in_months(self):
+        proc = subprocess.Popen(['python', '02.py'], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+        out, err = proc.communicate('12')
+        self.assertEqual(out, '144\n',
+                        'Expected: 144. Got: %s' % out)
 
 
 class TestEx3(unittest.TestCase):

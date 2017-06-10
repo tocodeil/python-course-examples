@@ -1,6 +1,9 @@
 """
-Write a Python program that generates 7 random integers
-between 1 and 100, and prints their sum.
-If the sum is divisible by 7, also print the word "Boom".
+Write a python program that asks the user
+to type in her age, and prints the age in months
+Example input:
+    12
+Example output:
+    144
 """
 
