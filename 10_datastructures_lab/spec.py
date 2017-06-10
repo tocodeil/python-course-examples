@@ -31,6 +31,11 @@ class TestEx1(unittest.TestCase):
                       'No error banner in: [%s]' % res)
 
 
+class TestEx2(unittest.TestCase):
+    def test_above_avg(self):
+        res = subprocess.check_output(['python', '02.py', '99', '90', '15', '28', '38', '44', '50', '81', '79', '60', '99', '90', '15', '28', '38', '44', '50', '81', '79', '60'])
+        self.assertEqual(res, '99 90 81 79 60 99 90 81 79 60\n')
+
 class TestEx3(unittest.TestCase):
     def test_3(self):
         proc = subprocess.Popen(
