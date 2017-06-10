@@ -79,11 +79,5 @@ magenta
         self.assertEqual(expected, got,
                          'Expected: [%s], Got: [%s]' % (expected, got))
 
-class TestEx3(unittest.TestCase):
-    def test_sum(self):
-        res = subprocess.check_output(['python', '03.py', 'numbers.txt']).strip()
-        self.assertEqual('149', res, 'Expected: [%s]. Got: [%s]' % (149, res))
-
-
 if __name__ == '__main__':
     unittest.main()
