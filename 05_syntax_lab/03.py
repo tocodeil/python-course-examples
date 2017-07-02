@@ -1,8 +1,6 @@
-"""
-Write a program that generates a random number
-between 1 and 10,000,
-and prints the sum of its digits.
-For example if the number was: 2345
-the result should be: 14.
-"""
-
+#!/usr/bin/python
+"""Takes random num from 1 -10000 and gives the sum of its digets"""
+from random import randint 
+sum = 0
+for num in str(randint(1,10000)): sum += int(num)	
+print sum
