@@ -1,9 +1,14 @@
-"""
-Write a program that generates 2 random numbers
-and calculates their least common multiple,
-that is the smallest number that is divisible
-by both.
-For example if the numbers were 4 and 6,
-program should print 12.
-"""
-
+#!/usr/bin/python
+"""makes 2 random numbers and gets the lowest number that they both divde in without plus"""
+from random import randint
+num = (randint(1,10) , randint(1,10))
+print num[0] , num[1]
+for i in range(1, (num[0] * num[1]) +1 ):
+	if i % num[0] == 0 and i % num[1] == 0:
+	 print i
+	 break
+		 
+		
+		
+		
+ 
