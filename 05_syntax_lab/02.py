@@ -1,9 +1,3 @@
-"""
-Write a python program that asks the user
-to type in her age, and prints the age in months
-Example input:
-    12
-Example output:
-    144
-"""
-
+#!/usr/bin/python
+"""Takes value of age in years returns value in months"""
+print 'age in months: %d' % (int(raw_input('input age in years: ')) * 12)
