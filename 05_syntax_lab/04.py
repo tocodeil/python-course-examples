@@ -1,8 +1,7 @@
-"""
-Write a program that reads lines from the user
-until an empty line is entered.
-After the user typed in an empty line,
-print all previously entered lines in reverse
-order (from last to first).
-"""
-
+x = True
+l = []
+while x:
+    text = raw_input()
+    if len(text) > 0: l.append(text)        
+    else: break
+for line_ in l[::-1]: print line_
