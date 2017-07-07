@@ -1,9 +1,8 @@
-"""
-Write a python program that asks the user
-to type in her age, and prints the age in months
-Example input:
-    12
-Example output:
-    144
-"""
-
+""" read age from the user and print the age in mounths"""
+print "insert your age (first the years and after the mounth"
+x = raw_input()
+y = raw_input()
+age = int(x)
+mounths = int(y)
+allmounth = (age*12) + mounths
+print "you age in mounths is:", allmounth

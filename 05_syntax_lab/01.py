@@ -1,19 +1,8 @@
-"""
-Write a program that reads 10 numbers from
-the user and prints the largest one
-
-For example if the largest number a user has typed
-is 74, program should print:
-
-    Max number = 74
-"""
-
-maxnum = float('-inf')
-
-for _ in range(10):
-    num = float(raw_input())
-    if num > maxnum:
-        maxnum = num
-
-print "Max number = %f" % maxnum
-
+""" read 10 numbers from user and print the bigger one"""
+max = -100000
+print "insert 10 nubers:"
+for i in range(10):
+    x = raw_input()
+    if int(x) > max:
+        max = int(x)
+print "the bigest number is:", max
