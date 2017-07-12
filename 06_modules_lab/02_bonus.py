@@ -1,15 +1,14 @@
-""" Write a program that reads 2 numbers from sys.argv
-and prints their sum.
-Bonus: Print error messages for invalid inputs.
+#!/usr/bin/python
 
-To print error messages we'll have to use a concept not yet learned in the
-course, and which will only be presented later: Exceptions.
-We'll tap into python's error handling and change its default
-error message to something more meaningful.
+import sys
+import os 
+try:
+	if len(sys.argv) != 3: 
+		print 'Usage: %s <num 1> <num 2>' % sys.argv[0]
+		sys.exit()
+	else:
+		print ( int(sys.argv[1]) , int (sys.argv[2]))		
+except ValueError ,e:
+	print 'one or more of the numbers are not convertiable to int'
 
-Read ahead the exception chapter here:
-https://docs.python.org/2.7/tutorial/errors.html
-
-And then continue to writing the code
-"""
-
+print 333
