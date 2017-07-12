@@ -1,4 +1,4 @@
-""" Write a program that reads 2 numbers from sys.argv
-and prints their sum.
-"""
-
+#!/usr/bin/python
+import sys
+import os 	
+print (int(sys.argv[1]) + int(sys.argv[2]))
