@@ -1,7 +1,3 @@
-"""
-A file named hosts holds hostnames and IP addresses
-in format: hostname=ip
-Write a program that reads the file and takes
-a list of hostnames in sys.argv
-Program should print the IP addresses of the hosts requested
-"""
+#!/usr/bin/python
+import sys, os
+print str([comupter_name.split('=')[1].replace('\n' , '') for comupter_name in open('hosts') if comupter_name.split('=')[0] in set(sys.argv[1:])]).strip('[]').replace("'","") 
