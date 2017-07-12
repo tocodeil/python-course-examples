@@ -1,19 +1,13 @@
-"""
-Write a program that takes two strings
-from the user and checks if they represent
-a valid user name.
-Valid users and passwords:
-    apple => red
-    lettuce => green
-    lemon => yellow
-    orange => orange
-
-When valid credentials are entered print:
-    Welcome Master
-
-And when invalid credentials are entered print:
-    INTRUDER ALERT
-
-and exit the program with a non-zero exit code
-"""
-
+#!/usr/bin/python
+import sys , os
+username_password = {'apple' : 'red' ,'lettuce': 'green' ,'lemon':'yellow','orange': 'orange'}
+username = raw_input('Input username: ')
+if username not in username_password:
+	print 'INTRUDER ALERT'
+	sys.exit() 
+else:
+	password = raw_input('Input password: ')
+	if username_password[username] == password:
+		print 'Welcome Master'
+	else:
+		print 'INTRUDER ALERT'
