@@ -1,8 +1,3 @@
-"""
-Accept a list of 20 grades on the command line and print the grades that
-are above average. e.g.
-
-python 02.py 99 90 15 28 38 44 50 81 79 60 99 90 15 28 38 44 50 81 79 60
-will print 99 90 81 79 60 99 90 81 79 60
-"""
-
+#!/usr/bin/python
+import sys, os 
+print  str([int(x) for x in sys.argv[1:21] if int(x) > (sum(([int(grade) for grade in sys.argv[1:21]]))/20)]).strip('[]')
