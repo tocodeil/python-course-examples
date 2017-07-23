@@ -1,26 +1,10 @@
-"""
-Write a program that takes 3 names. The first two
-are existing file names and the last is a new file name/
-The program should write the lines from the first two 
-files interwinded into the output file. So if we have
-
-a.txt with
-a1
-a2
-
-and b.txt with
-b1
-b2
-
-then running
-
-python 02.py a.txt b.txt c.txt
-will result in the creation of c.txt with the following content:
-
-a1
-b1
-a2
-b2
-
-"""
-
+"""intsert 2 file to one, line by line"""
+import os,sys
+from itertools import izip_longest
+f1 = sys.argv[1]
+f2 = sys.argv[2]
+f3 = sys.argv[3]
+with open ('c:\python/week_2_2/{0}'.format(f1),'r') as fin1,open ('c:\python/week_2_2/{0}'.format(f2),'r') as fin2,open ('c:\python/week_2_2/{0}'.format(f3),'w') as fout :
+    for line1,line2 in izip_longest(fin1,fin2):
+        fout.write(line1)
+        fout.write(line2)
