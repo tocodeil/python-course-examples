@@ -1,12 +1,12 @@
-"""
-Write a program that reads data
-from property files.
-Each line in the file can either be:
-    An empty line
-    A comment line (Start with #)
-    A property line (of the form key = value)
+#!/usr/bin/python
+import re 
+import sys, os
+def print_value_from_key(config , key ):
+	with open(config, 'r') as f:
+		for line in f:
+			keyValuePair = re.search(r'(\w+)\s*=\s*(\w+)', line)
+			if keyValuePair:
+				if re.match(keyValuePair.group(1) , key):
+					print keyValuePair.group(2)
 
-Write a program that takes a property file name and key
-as command line arguments and prints the requested value
-"""
-
+print_value_from_key(sys.argv[1] , sys.argv[2] )
