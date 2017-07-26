@@ -1,16 +1,12 @@
-"""
-Write a python program that takes a CSV file
-reads it line by line and prints each line
-with first and second columns reversed.
+#!/usr/bin/python
+import re 
+import sys, os
 
-Sample input:
-    Shana,Sargent,shanasargent@isoswitch.com
-    Witt,Hampton,witthampton@zaphire.com
-    Morgan,Grant,morgangrant@lotron.com
-
-Sample output:
-    Sargent,Shana,shanasargent@isoswitch.com
-    Hampton,Witt,witthampton@zaphire.com
-    Grant,Morgan,morgangrant@lotron.com
-"""
-
+with open('csv', 'r') as f:
+	for line in f:
+		x = re.search(r',\b(\w+)', line)
+		y = re.search(r'\b(\w+)' ,line)
+		if x and y:
+			line =  line.replace(y.group(1) , '!')
+			line =  line.replace(x.group(1) , y.group(1))
+			print line.replace( '!', x.group(1))
