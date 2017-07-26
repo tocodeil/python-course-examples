@@ -1,12 +1,5 @@
-"""
-Write a function called "longer_than" that takes minlen and
-a list of words, and returns only the words
-longer than minlen
-"""
+#!/usr/bin/python
+def longer_than(l , *words):
+	return [word for word in words if len(word) > l]
 
-def longer_than():
-    pass
-
-
-# print longer_than(4, "foo", "bar", "fantastic", "python", "abc")
-
+print longer_than(3, '2312321', '213sadsad' , '2123', '213' '222' ,'22')

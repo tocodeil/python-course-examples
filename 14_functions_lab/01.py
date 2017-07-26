@@ -1,9 +1,21 @@
-import unittest
+#!/usr/bin/python
+def mysum(*nums):
+	s = 0
+	for i in nums:
+		try:
+			s += int(i)
+		except:
+			pass
+	return s
+	
 
-"""
-Write 2 functions:
-    mysum - returns the sum of its input arguments
-    mymul - returns the multiplication of its input arguments
-    Ignore non-numeric arguments
-"""
+def mymul(*nums):
+	s = 1
+	for i in nums:
+		try:
+			s = s * int(i)
+		except:
+			pass
+	return s	
 
+print mymul(12 , 1 , 2 ,'asdas')

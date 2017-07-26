@@ -1,11 +1,3 @@
-"""
-Write a function called "sum_tens" that calculates the sum
-of the 10th digit from all arguments passed to it
-"""
-
-
-def sum_tens():
-    pass
-
-
-# print sum_tens(120, 140, 1123)
+#!/usr/bin/python
+def mydeciSum(*nums):
+	return sum([int(x) for x in [str(x)[-2] for x in nums if len(str(x)) > 1 ]])
