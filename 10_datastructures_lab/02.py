@@ -1,8 +1,9 @@
-"""
-Accept a list of 20 grades on the command line and print the grades that
-are above average. e.g.
-
-python 02.py 99 90 15 28 38 44 50 81 79 60 99 90 15 28 38 44 50 81 79 60
-will print 99 90 81 79 60 99 90 81 79 60
-"""
-
+""" get 20 grades from user and print only the big from the average"""
+import os,sys
+sumi = 0 
+for i in sys.argv[1:] :
+    sumi += int(i)
+avg = float(sumi) / len(sys.argv[1:])
+for i in sys.argv[1:] : 
+    if int(i) > avg :
+        print i,
