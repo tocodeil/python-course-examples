@@ -1,13 +1,3 @@
-"""
-Write a class called MyCounter that counts
-how many times it was initialised, so the
-following code:
-
-    for _ in range(10):
-        c1 = MyCounter()
-
-    print MyCounter.count
-
-should print 10
-"""
-
+#!/usr/bin/python
+import sys
+print  str([l1 for l1 in sys.argv[1]  if l1 in sys.argv[2]]).strip('[]').replace("'" , "")
