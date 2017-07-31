@@ -1,17 +1,3 @@
 #!/usr/bin/python
-global_c = 1
-class MyCounter:
-  def __init__(self):
-    global global_c
-    self.count = global_c
-    global_c += 1
-
-
-
-
-
-for _ in range(10):
-     c1 = MyCounter()
-
-# should print 10
-print MyCounter.count
+import sys
+print  str([l1 for l1 in sys.argv[1]  if l1 in sys.argv[2]]).strip('[]').replace("'" , "")
