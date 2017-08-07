@@ -1,7 +1,11 @@
-"""
-Write a python program that takes numbers in a loop
-and for each number prints its square root
-If value is negative or not a number show 
-a warning and keep reading values
-"""
-
+#!/usr/bin/python
+from math import sqrt 
+while True:
+	num = raw_input()
+	try:
+		print sqrt(int(num))
+	except ValueError as e:
+		if num < 0:
+			print ('num less then 0')
+		else:
+			print "Type only Numbers"
