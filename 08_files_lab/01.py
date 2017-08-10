@@ -1,34 +1,23 @@
-"""
-Write a program that takes 2 file names
-and appends the second file's contents to
-the end of the first one.
+#!/usr/bin/python
 
-So if file 'a.txt' has:
+import sys
+import os
 
-a1
-a2
+file1 = sys.argv[1]
+file2 = sys.argv[2]
 
-and file 'b.txt' has
 
-b1
-b2
-b3
+##bonus 1
+if (len(sys.argv[1])!=3):
+    print "no file input, this is a friendly error notice"
 
-then after running
-   python 01.py a.txt b.txt
-a.txt will have
+##bonus 2
+if os.path.isfile(sys.argv[2]):
+    file2type = "a"
+else:
+    file2type = "w"
 
-a1
-a2
-b1
-b2
-b3
-
-and b.txt will have
-
-b1
-b2
-b3
-
-"""
-
+with open (file1 , "r") as finput:
+    with open (file2 , file2type) as foutput:
+        for line in finput:
+            foutput.write(line)
