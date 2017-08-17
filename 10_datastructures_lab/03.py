@@ -1,7 +1,14 @@
-"""
-A file named hosts holds hostnames and IP addresses
-in format: hostname=ip
-Write a program that reads the file and takes
-a list of hostnames in sys.argv
-Program should print the IP addresses of the hosts requested
-"""
+#!/usr/bin/python
+
+import sys
+
+with open('/homes/dani/Desktop/hosts.txt', 'r') as file1:
+    for compName in file1:
+        y = str(compName.split("=")[1])
+        j = compName.split("=")[0]
+        for i in sys.argv[1:]:
+            if i == j:
+               print i
+               break
+            else:
+                print "Not Found"
