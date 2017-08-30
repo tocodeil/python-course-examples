@@ -1,9 +1,17 @@
-import unittest
+#!/usr/bin/python
 
-"""
-Write 2 functions:
-    mysum - returns the sum of its input arguments
-    mymul - returns the multiplication of its input arguments
-    Ignore non-numeric arguments
-"""
+def my_sum(*args):
+    for arg in args:
+        if not type(arg) == int:
+            return "input numbers only"
+    res = sum([int(x) for x in args])
+    return res
 
+def my_multiply(*args):
+    res = 1
+    for arg in args:
+        if not type(arg) == int:
+            return "input numbers only"
+    for arg in args:
+        res = arg * res
+    return res
