@@ -1,10 +1,8 @@
-"""
-Write a function called take_string_and_number that takes two arguments: 
-    A string
-    And a number
-If wrong types were passed in, raise an exception
-"""
+#!/usr/bin/python
 
-def take_string_and_number(s,n):
-    pass
 
+def what_type(n,args):
+    if (type(n) == int and type(args) == str) or (type(n) == str and type(args) == int):
+        return
+    else:
+        raise ValueError

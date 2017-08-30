@@ -1,12 +1,19 @@
-"""
-Write a function called "groupby" that takes a list
-and a function and returns a dictionary
-keyd by the return value of the function on the list items
+#!/usr/bin/python
 
-For example:
-    groupby(lambda s: s[0], ['foo', 'fi', 'hello', 'hi'])
-    returns: { 'f': ['foo','fi'], 'h': ['hello', 'hi'] }
-"""
+"""this list is just here for the test"""
 
-def groupby(f, words):
-    pass
+stateList = ['Arizona', 'Cleveland', 'Alabama', 'Chicago', 'Los Angeles', 'Louisiana']
+
+def groupby(fn, args):
+    dic ={}
+    for i in args:
+        if fn(i) in dic:
+            dic[fn(i)].append(i)
+        else:
+            dic[fn(i)] = []
+            dic[fn(i)].append(i)
+    return dic
+
+
+print groupby(lambda(s): s[0],stateList)
+
