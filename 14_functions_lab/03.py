@@ -1,11 +1,9 @@
-"""
-Write a function called "sum_tens" that calculates the sum
-of the 10th digit from all arguments passed to it
-"""
+#!/usr/bin/python
 
 
-def sum_tens():
-    pass
-
-
-# print sum_tens(120, 140, 1123)
+def asarot_sum(*args):
+    asarot = 0
+    for i in args:
+       g = str(i)[-2]
+       asarot += int(g)
+    return asarot
